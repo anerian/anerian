@@ -1,0 +1,32 @@
+<video id="<%= id %>-video" controls style="width:<%= width %>px;height:<%= height %>px">
+  <source src="<%= video %>.ogv" type="video/ogg" />
+  <source src="<%= video %>.mp4" type="video/mp4" />
+  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="<%= id %>-object" class="flashmovie" width="<%= width %>" height="<%= height %>">
+    <param value="<%= flash_player %>" name="movie"/>
+    <param value="transparent"         name="wmode" />
+    <param value="true"                name="allowFullScreen"/>
+    <param value="always"              name="allowscriptaccess"/>
+    <param value="high"                name="quality"/>
+    <param value='<%= flashvars %>'    name="flashvars"/>
+    <!--[if gt IE 6]>
+      <object width="<%= width %>" height="<%= height %>"
+              data="<%= flash_player %>"
+              type="application/x-shockwave-flash">
+        <param value="transparent"      name="wmode" />
+        <param value="true"             name="allowFullScreen"/>
+        <param value="always"           name="allowscriptaccess"/>
+        <param value="high"             name="quality"/>
+        <param value='<%= flashvars %>' name="flashvars"/><!
+    [endif]--><!--[if gt IE 6]><!-->
+      <object id="<%= id; %>-quick" width="<%= width; %>" height="<%= height; %>" type="video/quicktime" data="<%= video %>.mp4">
+        <param name="src"      value="<%= video %>.mp4" />
+        <param name="autoplay" value="true" />
+      <!--<![endif]--><p>
+        <strong>No video playback capabilities detected.</strong><br/>
+        Why not try to download the file instead?<br/>
+        <a href="<%= video %>.mp4" title="MPEG4 / H.264">Windows / Mac (.mp4)</a> |
+        <a href="<%= video %>.ogv" title="Ogg Theora &amp; Vorbis">Linux (.ogv)</a>
+      </p><!--[if gt IE 6]><!--></object><!--<![endif]-->
+    <!--[if gt IE 6]></object><![endif]-->
+  </object>
+</video>

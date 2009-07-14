@@ -1,0 +1,9 @@
+<% form_for @content do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :caption %>
+  <%= f.text_field :caption %>
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+  <%= f.submit %>
+<% end %>

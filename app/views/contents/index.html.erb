@@ -1,2 +1,6 @@
-<h1>Contents#index</h1>
-<p>Find me in app/views/contents/index.html.erb</p>
+<%= link_to 'New Content', new_content_path %>
+<ul>
+  <% for c in @contents do %>
+    <li><%= link_to c.name, edit_content_path(c) %></li>
+  <% end %>
+</ul>
