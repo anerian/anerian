@@ -6,4 +6,5 @@ helpers do
     erb = ERB.new(File.read("#{AppRoot}/lib/partials/_sub_menu.erb"))
     erb.result(binding)
   end
+
 end

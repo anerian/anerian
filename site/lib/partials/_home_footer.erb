@@ -1,0 +1,41 @@
+<!--[if IE]>
+<script type="text/javascript" src="swfobject/swfobject.js"></script>
+<script type="text/javascript">
+swfobject.registerObject("video-tag-object", "9.0.0", "swfobject/expressInstall.swf");
+</script>
+<![endif]-->
+<script type="text/javascript">
+  var openTabId = null;
+  function showTab(id) {
+    closeTab();
+    var tab = ID(id);
+    tab.style.display = 'block';
+    parentEl(tab).className = parentEl(tab).className.replace(/.*/,'tab selected');
+    openTabId = id;
+  }
+
+  function closeTab() {
+    if( openTabId ) {
+      var tab = ID(openTabId);
+      tab.style.display = 'none';
+      var p = parentEl(tab);
+      p.className = p.className.replace(/.*/,'tab');
+      openTabId = null;
+    }
+  }
+
+  var navbar = ID('navbar');
+  var divs = navbar.getElementsByTagName('div')
+  for( var i = 0, len = divs.length; i < len; ++i ) {
+    if( divs[i].className.match(/selected/) ) {
+      var nodes = divs[i].childNodes;
+      for( var j = 0, len = nodes.length; j < len; ++j ) {
+        if( nodes[j].nodeType == 1 && nodes[j].tagName == 'DIV' ) {
+          openTabId = nodes[j].id;
+          break;
+        }
+      }
+      break;
+    }
+  }
+</script>
