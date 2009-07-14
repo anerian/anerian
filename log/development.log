@@ -75,3 +75,75 @@ Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
 Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:03:59) [GET]
 Rendering pages/index
 Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:06:21) [GET]
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:07:07) [GET]
+Rendering template within layouts/application
+Rendering pages/index
+
+ActionView::TemplateError (undefined method `stylesheets_link_tag' for #<ActionView::Base:0x250f7b0>) on line #5 of app/views/layouts/application.html.erb:
+2: <html>
+3: <head>
+4:   <title>Anerian</title>
+5:   <%= stylesheets_link_tag :styles %>
+6:   <%= yield :css %>
+7: </head>
+8: <body>
+
+    app/views/layouts/application.html.erb:5
+
+Rendered rescues/_trace (40.4ms)
+Rendered rescues/_request_and_response (15.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:07:23) [GET]
+Rendering template within layouts/application
+Rendering pages/index
+
+ActionView::TemplateError (No expansion found for :styles) on line #5 of app/views/layouts/application.html.erb:
+2: <html>
+3: <head>
+4:   <title>Anerian</title>
+5:   <%= stylesheet_link_tag :styles %>
+6:   <%= yield :css %>
+7: </head>
+8: <body>
+
+    app/views/layouts/application.html.erb:5
+
+Rendered rescues/_trace (39.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:07:27) [GET]
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-14 14:07:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/styles.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:07:48) [GET]
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:07:55) [GET]
+Rendering template within layouts/application
+Rendering pages/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
