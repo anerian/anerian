@@ -4,7 +4,7 @@
   <title>Anerian.com</title>
   <link href="/style.css" type="text/css" rel="stylesheet"/>
 </head>
-<body class="<%= @page.view %>">
+<body<% if @page %> class="<%= @page.view %>"<% end %> >
 <!--[if IE]><div class="ie"><![endif]-->
   <!--[if lt IE 7.]><div class="ie6"><![endif]-->
   <div id="header">
@@ -46,5 +46,9 @@
   <!--[if lt IE 7.]></div><![endif]-->
 <!--[if IE]></div><![endif]-->
 <script type="text/javascript" src="/scripts.js"></script>
+<% for inc in (@footers||[]) do %>
+  <% erb = ERB.new(File.read(File.join(AppRoot,'lib','partials',"_#{inc}.erb"))) %>
+  <%= erb.result(binding) %>
+<% end %>
 </body>
 </html>
