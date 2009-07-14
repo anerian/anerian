@@ -1,12 +1,18 @@
 require 'rubygems'
-require 'activerecord'
 require 'sinatra'
 require 'erb'
+$:.unshift 'lib'
 
+configure do
+  require 'env'
+end
 
 get '/:permalink' do
   @page = Page.find_by_permalink(params[:permalink])
-  erb @page.template
+  erb @page.view.to_sym
+end
+
+get '/404' do
 end
 
 get '/blog' do

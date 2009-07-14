@@ -1,0 +1,17 @@
+<div class="submenu" id="<? echo $id; ?>">
+  <%
+    first = items.shift
+    last = items.pop
+  %>
+  <div class="top">
+    <div class="items"><a href="<%= first[:link] %>"><span><%= first[:title] %></span><cite><%= first[:desc] %></cite></a></div>
+  </div>
+  <div class="mid">
+  <% for i in items do %>
+    <div class="items"><a href="<%= i[:link] %>"><span><%= i[:title] %></span><cite><%= i[:desc] %></cite></a></div>
+  <% end %>
+  </div>
+  <div class="foot">
+    <div class="items"><a href="<%= last[:link] %>"><span><%= last[:title] %></span><cite><%= last[:desc] %></cite></a></div>
+  </div>
+</div>

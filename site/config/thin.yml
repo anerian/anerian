@@ -1,0 +1,14 @@
+---
+  environment: production
+  chdir: /var/www/apps/jobmap/current
+  address: 127.0.0.1
+  user: deployer
+  group: deployer
+  port: 4567
+  pid: /var/www/apps/jobmap/shared/pids/thin.pid
+  rackup: /var/www/apps/jobmap/current/thin.ru
+  log: /var/www/apps/jobmap/shared/log/thin.log
+  max_conns: 1024
+  timeout: 30
+  max_persistent_conns: 512
+  daemonize: true

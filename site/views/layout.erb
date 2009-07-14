@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anerian.com</title>
+  <link href="/style.css" type="text/css" rel="stylesheet"/>
+  <%= yield :head %>
+</head>
+<body<%= pageClass %>>
+<!--[if IE]><div class="ie"><![endif]-->
+  <!--[if lt IE 7.]><div class="ie6"><![endif]-->
+  <div id="header">
+    <h2><a href="/">Anerian</a></h2>
+    <h3 class="first">
+      <a id="about-menu-root" onclick="return openMenu('about-menu')" href="/about"><span>About</span><cite>We thrive on productive chaos.</cite></a>
+<? subMenu( 'about-menu', array( array( 'title' => 'About', 'desc' => 'We thrive on productive chaos.', 'link' => '/about' ),
+                                 array( 'title' => 'Meet our team', 'desc' => 'Who we are.', 'link' => '/team' ),
+                                 array( 'title' => 'FAQ', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' ) ) ); ?>
+    </h3>
+    <h3>
+      <a id="services-menu-root" onclick="return openMenu('services-menu')" href="/services"><span>Services</span><cite>We offer high value to your company.</cite></a>
+<? subMenu( 'services-menu', array( array( 'title' => 'Services', 'desc' => 'We offer high value to your company.', 'link' => '/services' ),
+                                    array( 'title' => 'CIO/IT strategy', 'desc' => 'We thrive on productive chaos.', 'link' => '/about' ),
+                                    array( 'title' => 'Interactive media', 'desc' => 'Who we are.', 'link' => '/team' ),
+                                    array( 'title' => 'Marketing &amp; branding', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' ),
+                                    array( 'title' => 'Strategic planning', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' ),
+                                    array( 'title' => 'Technology services', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' )
+                                  ) ); ?>
+    </h3>
+    <h3>
+      <a href="/who-we-serve"><span>Who we serve</span><cite>We would like to share our insights with you.</cite></a>
+      <div class="submenu" id="who-serve-menu">
+        <div class="top"></div>
+        <div class="foot"></div>
+      </div>
+    </h3>
+    <h3>
+      <a href="/contact-us"><span>Contact Us</span><cite>Meet our team.</cite></a>
+    </h3>
+    <h3>
+      <a href="/blog"><span>Our Blog</span><cite>Keep up on the lastest at Anerain.</cite></a>
+    </h3>
+  </div>
+  <div id="content">
+    <div id="content_box">
+      <? pageBody() ?>
+    </div>
+  </div>
+  <div id="footer">
+    1250 Connecticut Ave, NW Washington, DC, 20036 | e-mail: inquiries@anerian.com | T/888.945.8882 | F/866.467.0561
+  </div>
+  <!--[if lt IE 7.]></div><![endif]-->
+<!--[if IE]></div><![endif]-->
+<script type="text/javascript" src="/scripts.js"></script>
+<%= yield :foot %>
+</body>
+</html>

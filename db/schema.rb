@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20090714174526) do
   end
 
   create_table "pages", :force => true do |t|
-    t.string   "template"
+    t.string   "view"
     t.string   "title",      :null => false
     t.string   "permalink",  :null => false
     t.string   "type"
