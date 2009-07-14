@@ -28,4 +28,18 @@ helpers do
     erb.result(binding)
   end
 
+  def slot(name)
+    slots = @page.slots.find(:all, :conditions => {:name =>  name}, :order => :placement)
+    buffer = ""
+    if slots.empty?
+      buffer = "#{name}"
+    else
+      for slot in slots
+        erb = ERB.new(slot.content.body)
+        buffer << erb.results(binding)
+      end
+    end
+    buffer
+  end
+
 end
