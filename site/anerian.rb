@@ -9,7 +9,7 @@ end
 
 get '/:permalink' do
   @page = Page.find_by_permalink(params[:permalink])
-  erb @page.view.to_sym
+  erb @page.view.to_sym, :layout => true
 end
 
 get '/404' do

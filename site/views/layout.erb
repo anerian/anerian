@@ -3,28 +3,23 @@
 <head>
   <title>Anerian.com</title>
   <link href="/style.css" type="text/css" rel="stylesheet"/>
-  <%= yield :head %>
 </head>
-<body<%= pageClass %>>
+<body class="<%= @page.view %>">
 <!--[if IE]><div class="ie"><![endif]-->
   <!--[if lt IE 7.]><div class="ie6"><![endif]-->
   <div id="header">
     <h2><a href="/">Anerian</a></h2>
     <h3 class="first">
       <a id="about-menu-root" onclick="return openMenu('about-menu')" href="/about"><span>About</span><cite>We thrive on productive chaos.</cite></a>
-<? subMenu( 'about-menu', array( array( 'title' => 'About', 'desc' => 'We thrive on productive chaos.', 'link' => '/about' ),
-                                 array( 'title' => 'Meet our team', 'desc' => 'Who we are.', 'link' => '/team' ),
-                                 array( 'title' => 'FAQ', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' ) ) ); ?>
+      <%= sub_menu('about-menu', [{:title => 'About', :desc => 'We thrive on productive chaos.', :link => '/about'},
+                                  {:title => 'Meet our team', :desc => 'Who we are.', :link => '/team'},
+                                  {:title => 'FAQ', :desc => 'Have a question, we have answers.', :link => '/faq'}]) %>
     </h3>
     <h3>
       <a id="services-menu-root" onclick="return openMenu('services-menu')" href="/services"><span>Services</span><cite>We offer high value to your company.</cite></a>
-<? subMenu( 'services-menu', array( array( 'title' => 'Services', 'desc' => 'We offer high value to your company.', 'link' => '/services' ),
-                                    array( 'title' => 'CIO/IT strategy', 'desc' => 'We thrive on productive chaos.', 'link' => '/about' ),
-                                    array( 'title' => 'Interactive media', 'desc' => 'Who we are.', 'link' => '/team' ),
-                                    array( 'title' => 'Marketing &amp; branding', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' ),
-                                    array( 'title' => 'Strategic planning', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' ),
-                                    array( 'title' => 'Technology services', 'desc' => 'Have a question, we have answers.', 'link' => '/faq' )
-                                  ) ); ?>
+      <%= sub_menu('services-menu', [{:title => 'Services', :desc => 'We offer high value to your company.', :link => '/services'},
+                                     {:title => 'CIO/IT strategy', :desc => 'We thrive on productive chaos.', :link => '/team'},
+                                     {:title => 'FAQ', :desc => 'Have a question, we have answers.', :link => '/faq'}]) %>
     </h3>
     <h3>
       <a href="/who-we-serve"><span>Who we serve</span><cite>We would like to share our insights with you.</cite></a>
@@ -42,7 +37,7 @@
   </div>
   <div id="content">
     <div id="content_box">
-      <? pageBody() ?>
+      <%= yield %>
     </div>
   </div>
   <div id="footer">
@@ -51,6 +46,5 @@
   <!--[if lt IE 7.]></div><![endif]-->
 <!--[if IE]></div><![endif]-->
 <script type="text/javascript" src="/scripts.js"></script>
-<%= yield :foot %>
 </body>
 </html>

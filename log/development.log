@@ -398,3 +398,21 @@ Processing PagesController#index (for 127.0.0.1 at 2009-07-14 14:41:26) [GET]
 Rendering template within layouts/application
 Rendering pages/index
 Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-14 14:50:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPage Load (0.2ms)[0m   [0;1mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (2.3ms)
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/pages/1/edit]
+
+
+Processing PagesController#edit (for 127.0.0.1 at 2009-07-14 14:51:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPage Load (0.2ms)[0m   [0mSELECT * FROM "pages" WHERE ("pages"."id" = '1') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/edit
+Rendered pages/_form (2.3ms)
+Completed in 9ms (View: 3, DB: 0) | 200 OK [http://localhost/pages/1/edit]
