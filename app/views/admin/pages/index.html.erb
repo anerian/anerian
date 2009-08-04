@@ -1,0 +1,6 @@
+<%= link_to 'New Page', new_admin_page_path %>
+<ul>
+<% for p in @pages do %>
+  <li><%= link_to p.title, edit_admin_page_path(p) %></li>
+<% end %>
+</ul>

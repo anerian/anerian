@@ -8,18 +8,18 @@ configure do
 end
 
 get '/' do
-  @footers = ['home_footer']
   erb :home
 end
 
-get '/:permalink' do
-  @page = Page.find_by_permalink(params[:permalink])
-  halt 404 if @page.nil?
-  erb @page.view.to_sym, :layout => true
+get '/blog' do
+  #@posts = Post.find(:all, :offset => (params[:page]||0).to_i, :limit => 10)
+  erb 'blog', :layout => true
 end
 
-get '/blog' do
-  @posts = Post.find(:all, :offset => (params[:page]||0).to_i, :limit => 10)
+get '/:permalink' do
+  path = params[:permalink]
+  halt 404 if path.match(/\.\./) or path.match(/\//)
+  erb path.to_sym, :layout => true
 end
 
 not_found do

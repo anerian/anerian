@@ -5,6 +5,7 @@ class CreatePages < ActiveRecord::Migration
       t.string :title, :null => false
       t.string :permalink, :null => false 
       t.string :type
+      t.integer :template_id, :null => false
       t.timestamps
     end
   end

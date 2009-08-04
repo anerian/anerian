@@ -9,12 +9,13 @@ class CreateContents < ActiveRecord::Migration
 
     create_table :slots do |t|
       t.integer :content_id, :null => false
-      t.integer :page_id, :null => false
+      t.integer :slottable_id, :null => false
+      t.string  :slottable_type, :null => false
       t.integer :placement, :default => 0
       t.string  :name, :default => '', :null => false
     end
 
-    add_index :slots, [:page_id, :content_id]
+    add_index :slots, [:slottable_id, :content_id]
   end
 
   def self.down

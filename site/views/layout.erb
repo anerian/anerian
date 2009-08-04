@@ -5,43 +5,26 @@
   <link href="/style.css" type="text/css" rel="stylesheet"/>
 </head>
 <body<% if @page %> class="<%= @page.view %>"<% end %> >
-<!--[if IE]><div class="ie"><![endif]-->
-  <!--[if lt IE 7.]><div class="ie6"><![endif]-->
+<!--[if IE]><div class="ie"><![endif]--><!--[if lt IE 7.]><div class="ie6"><![endif]-->
   <div id="header">
-    <h2><a href="/">Anerian</a></h2>
-    <h3 class="first">
-      <a id="about-menu-root" onclick="return openMenu('about-menu')" href="/about"><span>About</span><cite>We thrive on productive chaos.</cite></a>
-      <%= sub_menu('about-menu', [{:title => 'About', :desc => 'We thrive on productive chaos.', :link => '/about'},
-                                  {:title => 'Meet our team', :desc => 'Who we are.', :link => '/team'},
-                                  {:title => 'FAQ', :desc => 'Have a question, we have answers.', :link => '/faq'}]) %>
-    </h3>
-    <h3>
-      <a id="services-menu-root" onclick="return openMenu('services-menu')" href="/services"><span>Services</span><cite>We offer high value to your company.</cite></a>
-      <%= sub_menu('services-menu', [{:title => 'Services', :desc => 'We offer high value to your company.', :link => '/services'},
-                                     {:title => 'CIO/IT strategy', :desc => 'We thrive on productive chaos.', :link => '/team'},
-                                     {:title => 'FAQ', :desc => 'Have a question, we have answers.', :link => '/faq'}]) %>
-    </h3>
-    <h3>
-      <a href="/who-we-serve"><span>Who we serve</span><cite>We would like to share our insights with you.</cite></a>
-      <div class="submenu" id="who-serve-menu">
-        <div class="top"></div>
-        <div class="foot"></div>
-      </div>
-    </h3>
-    <h3>
-      <a href="/contact-us"><span>Contact Us</span><cite>Meet our team.</cite></a>
-    </h3>
-    <h3>
-      <a href="/blog"><span>Our Blog</span><cite>Keep up on the lastest at Anerain.</cite></a>
-    </h3>
+    <div class="ufocus">
+      <h1><a href="/">Anerian</a></h1>
+      <h3 class="noline"><a href="/blog">Insights</a></h3>
+      <h3><a href="/anerian-way">Anerian Way</a></h3>
+      <h3><a href="/lab">Lab</a></h3>
+      <h3><a href="/consulting">Consulting</a></h3>
+      <h3><a href="/our-team">Our Team</a></h3>
+    </div>
   </div>
   <div id="content">
-    <div id="content_box">
+    <div class="ufocus">
       <%= yield %>
     </div>
   </div>
   <div id="footer">
-    1250 Connecticut Ave, NW Washington, DC, 20036 | e-mail: inquiries@anerian.com | T/888.945.8882 | F/866.467.0561
+    <div class="ufocus">
+      1250 Connecticut Ave, NW Washington, DC, 20036 | e-mail: <a href="mailto:inquiries@anerian.com">inquiries@anerian.com</a> | T/888.945.8882 | F/866.467.0561
+    </div>
   </div>
   <!--[if lt IE 7.]></div><![endif]-->
 <!--[if IE]></div><![endif]-->

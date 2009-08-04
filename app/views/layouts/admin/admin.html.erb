@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anerian</title>
+  <%= stylesheet_link_tag 'admin/styles' %>
+  <%= yield :css %>
+</head>
+<body>
+<!--[if IE]><div class="ie"><![endif]--><!--[if lt IE 7.]><div class="ie6"><![endif]-->
+  <div id="header">
+    <div class="ufocus">
+      <h1><a href="/admin">Anerian</a></h1>
+      <h3 class="noline"><%= link_to 'Users', admin_users_path %></h3>
+      <h3><%= link_to 'Templates', admin_ptemplates_path %></h3>
+      <h3><%= link_to 'Tags', admin_tags_path %></h3>
+      <h3><%= link_to 'Pages', admin_pages_path %></h3>
+      <h3><%= link_to 'Posts', admin_posts_path %></h3>
+      <%= yield :header %>
+    </div>
+  </div>
+  <div id="content">
+    <div class="ufocus">
+      <%= yield %>
+    </div>
+  </div>
+  <div id="footer">
+    <div class="ufocus">
+      1250 Connecticut Ave, NW Washington, DC, 20036 | e-mail: inquiries@anerian.com | T/888.945.8882 | F/866.467.0561
+      <%= yield :footer %>
+    </div>
+  </div>
+<!--[if lt IE 7.]></div><![endif]--><!--[if IE]></div><![endif]-->
+<%= yield :js %>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<h4><%= link_to 'New template', new_admin_template_path %></h4>
+<ul>
+  <% for template in @templates do %>
+    <li><%= link_to template.name, edit_admin_template_path(template) %></li>
+  <% end %>
+</ul>

@@ -1,6 +1,5 @@
-<%= link_to 'New Page', new_page_path %>
 <ul>
 <% for p in @pages do %>
-  <li><%= link_to p.title, edit_page_path(p) %></li>
+  <li><%= link_to p.title, page_path(p) %></li>
 <% end %>
 </ul>

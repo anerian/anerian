@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090714174526) do
+ActiveRecord::Schema.define(:version => 20090803185707) do
 
   create_table "contents", :force => true do |t|
     t.text     "body"
@@ -21,21 +21,30 @@ ActiveRecord::Schema.define(:version => 20090714174526) do
 
   create_table "pages", :force => true do |t|
     t.string   "view"
-    t.string   "title",      :null => false
-    t.string   "permalink",  :null => false
+    t.string   "title",       :null => false
+    t.string   "permalink",   :null => false
     t.string   "type"
+    t.integer  "template_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ptemplates", :force => true do |t|
+    t.string   "name"
+    t.string   "grid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "slots", :force => true do |t|
-    t.integer "content_id",                 :null => false
-    t.integer "page_id",                    :null => false
-    t.integer "placement",  :default => 0
-    t.string  "name",       :default => "", :null => false
+    t.integer "content_id",                     :null => false
+    t.integer "slottable_id",                   :null => false
+    t.string  "slottable_type",                 :null => false
+    t.integer "placement",      :default => 0
+    t.string  "name",           :default => "", :null => false
   end
 
-  add_index "slots", ["page_id", "content_id"], :name => "index_slots_on_page_id_and_content_id"
+  add_index "slots", ["slottable_id", "content_id"], :name => "index_slots_on_slottable_id_and_content_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

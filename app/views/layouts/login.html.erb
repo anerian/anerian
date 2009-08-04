@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anerian</title>
+  <%= stylesheet_link_tag 'styles' %>
+  <%= yield :css %>
+</head>
+<body>
+  <div id="header">
+  </div>
+  <div id="body">
+    <%= yield %>
+  </div>
+  <%= yield :js %>
+</body>
+</html>

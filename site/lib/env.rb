@@ -1,3 +1,4 @@
+require 'uri'
 require 'rubygems'
 require 'activerecord'
 $:.unshift '../app/models'

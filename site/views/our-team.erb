@@ -1,0 +1,164 @@
+<div id="team-content">
+  <div id="stage">
+    <div id="team">
+    </div>
+  </div>
+  <%
+    employees = %({"employees":[{"img":"/flash/steve.png","name":"Steve Lynott","url":"#"},{"img":"/flash/marty.png","name":"Marty Fisher","url":"#"},{"img":"/flash/sonu.png","name":"Sonu Singh","url":"#"},{"img":"/flash/ed.png","name":"Ed Anderson","url":"#"}, {"img":"/flash/peter.png","name":"Peter Jacobs","url":"#"},{"img":"/flash/donna.png","name":"Donna Engelgau","url":"#"},{"img":"/flash/todd.png","name":"Todd Fisher","url":"#"},{"img":"/flash/jon.png","name":"Jonathan Phillips","url":"#"},{"img":"/flash/min.png","name":"Min Kim","url":"#"},{"img":"/flash/zach.png","name":"Zach Hannes","url":"#"},{"img":"/flash/corrie.png","name":"Corrie Davidson","url":"#"},{"img":"/flash/liz.png","name":"Liz Wheatley","url":"#"},{"img":"/flash/renee.png","name":"Renee Alarid","url":"#"},{"img":"/flash/beata.png","name":"Beata Dobrocsi","url":"#"}]})
+    people = URI.encode(employees);
+  %>
+  <script type="text/javascript" src="/scripts/swfobject.js"></script>
+  <script type="text/javascript">
+    swfobject.embedSWF("/flash/employees.swf?people=<%= people %>", "team", "951", "300", "9.0.0", "/flash/expressInstall.swf");
+  </script>
+  <div class="shell">
+    <div class="container">
+      <div class="box">
+        <h3>How Anerian is different?</h3>
+        <h4>We thrive on productive chaos.</h4>
+        <p>
+          Our team members are smart, creative, energetic, passionate and experienced, and we 
+          develop innovative solutions to meet our clients' needs.
+        </p>
+        <p>
+          Our office environment is fun, supportive, and inspiring. We spend a lot of time here, so 
+          it's important to enjoy each other's company.
+        </p>
+        <p>
+          We push each other to do our best work, encourage everyone to share their ideas, and 
+          respect our colleagues,' diverse talents, and unique perspectives.
+        </p>
+        <p>
+          There's an impressive complement and array of talent at Anerian. Our team members 
+          have:
+        </p>
+        <ul>
+          <li> Held leadership positions at some of the most innovative strategic and technological 
+            companies, including AOL, Discovery Communications, IBM, and Apple</li>
+
+          <li> Revolutionized social marketing through groundbreaking endeavors, such as 
+            building and launching the Revolution Health site, a leading health-care and social 
+            networking site</li>
+
+          <li> Worked in the web since its infancy and successfully launched more than 30 new 
+            media platforms that have been used by millions</li>
+
+          <li> Managed major branding initiatives for such companies as Verizon, SmithKline 
+            Beecham, Hershey Corp., the Peace Corps, Girl Scouts of the USA, IBM, and The 
+            World Bank</li>
+
+          <li>Directed video productions, including planning, producing, script writing, filming, 
+              editing, and video streaming for global media sites</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>What Does Anerian Mean?</h3>
+        <p>A word about the name Anerian. We're often asked what it means. Translated from Old 
+        English, it means: TO DELIVER — and that's what we do.
+        </p>
+        <p>
+        One of our employees came up with the name and we thought it was a great idea. It's 
+        short, simple, distinctive, and meaningful – plus it's a great conversation starter!
+        </p>
+        <div style="width: 459px; height: 360px;" id="saiweb_a9d515d20ca29b9d7c84184a5034096d"><embed height="100%" width="100%" flashvars='config={"key":"false","plugins":{"controls":{"buttonOverColor":"","sliderColor":"","bufferColor":"","sliderGradient":"none","progressGradient":"medium","durationColor":"","progressColor":"","backgroundColor":"","timeColor":"","buttonColor":"","backgroundGradient":"none","bufferGradient":"none","opacity":1}},"clip":{"url":"http://anerian.ws/files/NGQxNGU1ZGI1YTI0/1wc4Ob3N5gme.flv","autoPlay":false,"autoBuffering":false},"playerId":"saiweb_a9d515d20ca29b9d7c84184a5034096d","playlist":[{"url":"http://anerian.ws/files/NGQxNGU1ZGI1YTI0/1wc4Ob3N5gme.flv","autoPlay":false,"autoBuffering":false}]}' name="saiweb_a9d515d20ca29b9d7c84184a5034096d_api" bgcolor="#000000" id="saiweb_a9d515d20ca29b9d7c84184a5034096d_api" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" quality="high" allowscriptaccess="always" allowfullscreen="true" src="http://www.anerian.com/wp-content/plugins/word-press-flow-player/flowplayer/flowplayer.commercial-3.0.3.swf"/></div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="container">
+      <% team_member('Steve Lynott', 'President &amp; Founding Partner') do %>
+        Steve brings a strong business, marketing, and sales background to the Anerian team. 
+        He was the founder of several successful business ventures in management consulting, 
+        information technology (IT) strategy, and software products. A fabulous, well-liked 
+        leader, Steve is also a great facilitator and a wonderful listener. Uniquely able to develop 
+        both a vision and a solution, Steve thinks on his feet and comes up with innovative ideas 
+        to meet our clients’ needs. His strategic, non-linear thinking, combined with his creativity, 
+        high energy, and adaptability‚ has contributed to his continued success.
+      <% end %>
+      <% team_member('Todd Fisher', 'Director of Engineering') do %>
+        Todd works behind the scenes to ensure a positive user experience. He helps build web infrastructure and organize content so information is easy to find and quickly accessible. He has studied the most innovative technologies and incorporates sophisticated ‚ yet user friendly‚ programs into our clients‚ sites. Todd has worked his technological magic from coast to coast, serving key roles in website development for companies from California to Washington, DC.
+      <% end %>
+      <div class="clear"></div>
+      <% team_member('Marty Fisher','Chief Technology Officer &amp; Founding Partner') do %>
+        Marty has a brilliant technological mind, which served him well at leading Internet 
+        companies, and adds tremendous value to the Anerian team. Marty was Chief 
+        Technology Officer (CTO) at AOL, where he headed up a 3,000-person technology 
+        development organization that built and operated AOL’s multi-brand, international 
+        collection of products, including: AOL’s Desktop Software, aol.com, AIM, Netscape, and 
+        CompuServe. He also has served as CTO at Revolution LLC, where he led the 
+        development of revolutionhealth.com, one of the first social networking sites, which 
+        changed the way people gather and share healthcare information. Marty understands 
+        how to adapt technology in useful ways to solve business problems. He is quiet but 
+        profound, able to think big, yet remain practical at the same time. Through his constant 
+        encouragement, his colleagues are inspired to do their best work. He strongly believes 
+        that everyone in the company is equal and everyone provides great value to the 
+        organization and to Anerian’s clients. He has been developing innovative software 
+        technology for more than 25 years, and even during his down time, he’s thinking 
+        about technical solutions while out sailing on the Chesapeake.
+      <% end %>
+      <% team_member('Jonathan Phillips','Information Architect &amp; Systems Engineer') do %>
+        If he builds it, they will come. Jonathan uses the latest software and other technologies to create well-organized web infrastructures that ensure easy navigation. He carefully 
+        considers each client’s goals, as well as the information they want to convey, and 
+        organizes the site so that users can quickly find the content they need and want.
+      <% end %>
+      <div class="clear"></div>
+      <% team_member('Sonu Singh','CEO &amp; Founding Partner') do %>
+        Sonu is a visionary thinker and a true venturist who dreams big and delivers results. 
+        He’s smart, confident, and business savvy, with a tremendous passion for creating 
+        value and delivering substantial impact. He’s able to take a complex problem and break 
+        it down, with a clear understanding of the actions necessary to solve it. Sonu, who 
+        has worked in the consulting field for more than 20 years, most recently was the VP 
+        of Enterprise Solutions for SRA. Previously, he was the co-founder and President of 
+        Spectrum Solutions.
+      <% end %>
+      <% team_member('Zach Hannes','Web Producer &amp; Content Ninja') do %>
+        An experienced leader with roles in global IT management, consulting, and process 
+        analysis, Ed has more than 20 years of experience helping organizations achieve 
+        their business goals and develop a strategic vision, use technology effectively, and 
+        implement solid governing and management processes. Ed has held leadership roles 
+        with such world-class organizations as, including Peace Corps, Sodexho, Iridium, Verizon, and Accenture. Over the years, he has helped organizations including Marriott, Mars, 
+        International Air Transportation Association, British Government, Department of 
+        Defense, and Motorola achieve their business goals.
+      <% end %>
+      <div class="clear"></div>
+      <% team_member('Regina Perkins','Sr VP &amp; Practice Leader') do %>
+        Regina’s primary focus is working with executives and leadership groups to affect 
+        strategic change and transformation within organizations. She has more than 20 years 
+        of experience helping executives solve complex business and organizational issues, 
+        and always brings insight and a fresh perspective. Regina’s clients have included 
+        senior executives in US Agency for International Development, US Air Force, US 
+        Marine Corps, US Navy, GSA CIO University, Defense Finance and Accounting 
+        Services, District of Columbia Government, Council of Governments, Freddie Mac, 
+        NASD, Verizon, SmithKline Beecham, Hershey Corp, Girl Scouts of the USA, The 
+        World Bank, and International Finance Corporation (IFC).
+      <% end %>
+      <% team_member('Corrie Davidson','Multimedia Specialist') do %>
+        Corrie is an accomplished video producer, with significant hands-on experience in filming, editing, set design, and managing all aspects of video production. She also excels at web design and content management, creating powerful websites, and other interactive tools. She’s worked extensively with the latest web and video tools and understands how to maximize clients’ visibility across multiple channels.
+      <% end %>
+      <div class="clear"></div>
+      <% team_member('Ed Anderson','Sr VP &amp; Practice Leader') do %>
+        An experienced leader with roles in global IT management, consulting, and process 
+        analysis, Ed has more than 20 years of experience helping organizations achieve 
+        their business goals and develop a strategic vision, use technology effectively, and 
+        implement solid governing and management processes. Ed has held leadership roles 
+        with such world-class organizations as, including Peace Corps, Sodexho, Iridium, Verizon, and Accenture. Over the years, he has helped organizations including Marriott, Mars, 
+        International Air Transportation Association, British Government, Department of 
+        Defense, and Motorola achieve their business goals.
+      <% end %>
+      <% team_member('Liz Wheatley','Illustrator') do %>
+        Liz is a visual thinker and Illustrator. She brings a unique perspective, visually conveying complex business issues through graphic facilitation. Her life-long drawing skills and innovation have earned her awards and recognition for her outstanding work. Liz has put these skills to work by storyboarding for TV spots and commercials to visually communicate messages; past clients include ABC, Family, and VH1. Liz graduated from Pratt Institute with a BFA in Illustration. She also completed a one-year graduate program in conceptual drawings using AutoCAD.
+      <% end %>
+      <div class="clear"></div>
+      <% team_member('Donna Engelgau', 'VP & Interactive Media') do %>
+        Donna is a content strategist with more than 30 years of experience in editorial strategy/planning, content development, analysis, and management. Her solid background includes developing programming plans and creating compelling and engaging content. She has held senior-level roles with leading online media companies, including Discovery Communications and Revolution Health Group. A former star reporter and editor, Donna has worked for every type of publication‚ daily and weekly newspapers, news services, magazines, newsletters, and the web. Donna also has an extensive healthcare background, having covered health issues, policy and legislation for many years.
+      <% end %>
+      <% team_member('Renee Alarid','Senior Visual Designer') do %>
+        Renee is an experienced graphic designer within the print, web and motion graphic fields. 
+        She also has experience with CSS, HTML and Information Architecture. She comes to Anerian with ten years experience and has worked at AOL, Discovery Channel, Feld Entertainment and Beach Associates. Renee graduated from New Mexico Highlands University with a BFA in Visual Design and a BA in Television Production. She also completed a one-year graduate program in Digital Design at Vancouver Film School. She is a great designer and uses the newest trends to devlope a clean design. 
+      <% end %>
+      <% team_member('Beata Dobrocsi','Brand Designer') do %>
+        Beata excels at developing visual branding and corporate design for clients across a variety of industries. Her background includes creating highly compelling and engaging materials, including websites, for healthcare and education clients. She brings extensive hands-on experience from Revolution Health, where she was Art Director of the company’s business-to-business products and campaigns for print and online. Beata works closely with our clients to help them execute their vision, establish their brand, and achieve their business goals. She has successfully positioned brands above competitors in marketing and advertising campaigns, increasing sales 250 percent. Beata also has helped to develop logistics launch plans to disseminate marketing programs and materials worldwide.
+      <% end %>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

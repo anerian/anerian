@@ -1,4 +1,5 @@
 class Page < ActiveRecord::Base
-  has_many :slots
+  belongs_to :template
+  has_many :slots, :as => :slottable
   has_many :contents, :through => :slots
 end

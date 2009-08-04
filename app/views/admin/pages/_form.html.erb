@@ -1,0 +1,41 @@
+<%
+  @views = {}
+  views = Dir["#{RAILS_ROOT}/site/views/*.erb"].reject{|f| f.match(/layout.erb/) }.map{|f|
+    @slots = []
+    erb = ERB.new(File.read(f))
+    erb.result(binding)
+    @views[File.basename(f).gsub(/\.erb/,'')] = @slots
+  }
+%>
+
+<% form_for [:admin, @page] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :permalink %>
+  <%= f.text_field :permalink %>
+  <%= f.label :view %>
+  <%= f.select :view, ['about', 'article', 'articles', 'home'], {}, {:onchange => "updateSlots()"} %>
+  <div id="slots">
+    
+  </div>
+  <%= f.submit %>
+<% end %>
+
+<script type="text/javascript" src="/javascripts/prototype.js"></script>
+<script type="text/javascript">
+  var currentPage = <%= ActiveSupport::JSON.encode(@page, :include => [:slots,:contents]) %>;
+  var views = <%= ActiveSupport::JSON.encode(@views) %>;
+  function updateSlots() {
+    var view = $F("page_view");
+    console.log("update slots: " + view );
+    var slots = "<ul>";
+    var viewSlots = views[view];
+    for( var i = 0, len = viewSlots.length; i < len; ++i ) {
+      slots += "<li id='slot_" + i + ">" + viewSlots[i] + "</li>";
+    }
+    $("slots").update(slots);
+  }
+  document.observe("dom:loaded", function() {
+    updateSlots();
+  });
+</script>
