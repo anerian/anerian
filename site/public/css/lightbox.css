@@ -34,10 +34,17 @@
   text-align:justify;
   width:620px;
 }
-#lightboxImage h1 {
+#lightboxImage h1,
+#lightboxImage h2,
+#lightboxImage h3,
+#lightboxImage h4 {
   color:#FAA61F;
-  font-size:26px;
 }
+#lightboxImage h1 { font-size:26px; }
+#lightboxImage h2 { font-size:20px; }
+#lightboxImage h3 { font-size:18px; }
+#lightboxImage h4 { font-size:16px; }
+
 #lightboxImage p,
 #lightboxImage li {
   line-height:16px;
