@@ -83,6 +83,8 @@ body {
   height:66px;
   padding:5px;
 }
+#header h2,
+#header h2 a,
 #header h1,
 #header h1 a {
   background:transparent url(/images/logo.png) no-repeat;
@@ -94,6 +96,7 @@ body {
   margin:0;
   padding:0;
 }
+#header h2 a:hover,
 #header h1 a:hover {
   background:transparent url(/images/logog.png) no-repeat;
 }
@@ -107,7 +110,7 @@ body {
   color:#fff;
   position:relative;
   line-height:66px;
-  z-index:100; /* for older ie */
+  z-index:50; /* for older ie */
   background:transparent url(/images/divider.png) no-repeat right center;
 }
 #header h3.noline {
@@ -144,6 +147,12 @@ body {
   min-height:500px;
   padding-top:20px;
 }
+.page #content {
+  background:transparent url(/images/lcenter-grad.png) repeat-x;
+}
+.our-team #content {
+  background:transparent url(/images/center-grad.png) repeat-x;
+}
 .ufocus {
   margin:0 auto;
   width:1020px;
@@ -158,35 +167,58 @@ body {
   clear:both;
 }
 /* Footer chrome end */
-#stage {
-  position:relative;
-  top:0px; left:0px;
-  height:460px;
+
+#content h1,
+#content h2,
+#content h3,
+#content h4 {
+  color:#FAA61F;
+  text-transform:uppercase;
+  font-style:normal;
 }
-#pload {
-  left:225px;
-  position:absolute;
-  top:147px;
+#content h2,
+#content h3,
+#content h4 { margin:0; }
+#content h1 { font-size:26px; }
+#content h2 { font-size:18px; }
+#content h3 { font-size:16px; }
+#content h4 { font-size:14px; }
+#content,
+#content p {
+  font-size:12px;
 }
-#sections {
-  height:200px;
-  margin-bottom:140px;
-}
-#sections h2 a,
-#sections h2 {
-  margin:0;
+#content h1 a,
+#content h2 a,
+#content h3 a,
+#content h4 a {
   color:#f89f1d;
   text-transform:uppercase;
   text-decoration:none;
 }
-#sections h2 a:hover {
+#content h1 a:hover,
+#content h2 a:hover,
+#content h3 a:hover,
+#content h4 a:hover {
   text-shadow: -1px -1px 2px #f89f1d;
   text-shadow: 1px 1px 2px #f89f1d;
+}
+
+#stage {
+  position:relative;
+  top:0px; left:0px;
+  height:375px;
+}
+#pload {
+  left:225px;
+  position:absolute;
+  top:100px;
+}
+#sections {
+  margin-bottom:140px;
 }
 #sections .section {
   float:left;
   width:225px;
-  height:200px;
   margin-left:20px;
 }
 #team {
@@ -234,32 +266,69 @@ body {
   font-family:arial;
 }
 .section a.icon {
-  width:237px;
-  height:223px;
+  width:216px;
+  height:206px;
   display:block;
   text-indent:-9999px;
 }
 #strategy a.icon {
-  background:transparent url(/images/home/strategy.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_strategy.png) 0px 0px no-repeat;
 }
 #strategy a.icon:hover {
-  background:transparent url(/images/home/strategy_rollover.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_strategy.png) 0px -207px no-repeat;
 }
 #marketing a.icon {
-  background:transparent url(/images/home/marketing.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_marketing.png) 0px 0px no-repeat;
 }
+#sections .sections:hover,
 #marketing a.icon:hover {
-  background:transparent url(/images/home/marketing_rollover.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_marketing.png) 0px -209px no-repeat;
 }
 #interactive a.icon {
-  background:transparent url(/images/home/interactive.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_interactive.png) 0px 0px no-repeat;
 }
+#sections .sections:hover,
 #interactive a.icon:hover {
-  background:transparent url(/images/home/interactive_rollover.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_interactive.png) 0px -209px no-repeat;
 }
 #mobile a.icon {
-  background:transparent url(/images/home/mobile.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_mobile.png) 0px 0px no-repeat;
 }
+#sections .sections:hover,
 #mobile a.icon:hover {
-  background:transparent url(/images/home/mobile_rollover.png) no-repeat;
+  background:transparent url(/images/home/thumbnail_sprite_mobile.png) 0px -210px no-repeat;
+}
+.consulting #sections .section {
+  float:left;
+  width:300px;
+}
+.consulting #innov a.icon {
+  background:transparent url(/images/consulting/conspg_innov.jpg) no-repeat;
+}
+.consulting #innov a.icon:hover {
+  background:transparent url(/images/consulting/conspg_innov_rollover.jpg) no-repeat;
+}
+.consulting #strategy a.icon {
+  background:transparent url(/images/consulting/conspg_strategy.jpg) no-repeat;
+}
+.consulting #strategy a.icon:hover {
+  background:transparent url(/images/consulting/conspg_strategy_rollover.jpg) no-repeat;
+}
+.consulting #marketing a.icon {
+  background:transparent url(/images/consulting/conspg_marketing.jpg) no-repeat;
+}
+.consulting #marketing a.icon:hover {
+  background:transparent url(/images/consulting/conspg_marketing_rollover.jpg) no-repeat;
+}
+.consulting #interactive a.icon {
+  background:transparent url(/images/consulting/conspg_interactive.jpg) no-repeat;
+}
+.consulting #interactive a.icon:hover {
+  background:transparent url(/images/consulting/conspg_interactive_rollover.jpg) no-repeat;
+}
+.consulting #talent a.icon {
+  background:transparent url(/images/consulting/conspg_talent.jpg) no-repeat;
+}
+.consulting #talent a.icon:hover {
+  background:transparent url(/images/consulting/conspg_talent_rollover.jpg) no-repeat;
 }

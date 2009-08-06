@@ -16,10 +16,23 @@ get '/blog' do
   erb 'blog', :layout => true
 end
 
+def find_view_from_path(params)
+  @path = params[:permalink]
+  halt 404 if @path.match(/\.\./) or @path.match(/\//)
+  @path.to_sym
+end
+
 get '/:permalink' do
-  path = params[:permalink]
-  halt 404 if path.match(/\.\./) or path.match(/\//)
-  erb path.to_sym, :layout => true
+  erb find_view_from_path(params), :layout => true
+end
+
+post '/:permalink' do
+  puts request.inspect
+  if request.env['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest'
+    erb find_view_from_path(params), :layout => false
+  else
+    erb find_view_from_path(params), :layout => true
+  end
 end
 
 not_found do
