@@ -1,13 +1,13 @@
 ---
   environment: production
-  chdir: /var/www/apps/jobmap/current
+  chdir: /var/www/apps/anerian/current
   address: 127.0.0.1
   user: deployer
   group: deployer
-  port: 4567
-  pid: /var/www/apps/jobmap/shared/pids/thin.pid
-  rackup: /var/www/apps/jobmap/current/thin.ru
-  log: /var/www/apps/jobmap/shared/log/thin.log
+  port: 7890
+  pid: /var/www/apps/anerian/shared/pids/thin.pid
+  rackup: /var/www/apps/anerian/current/config/rack.ru
+  log: /var/www/apps/anerian/shared/log/thin.log
   max_conns: 1024
   timeout: 30
   max_persistent_conns: 512

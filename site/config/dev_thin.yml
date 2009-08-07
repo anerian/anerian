@@ -1,0 +1,12 @@
+---
+  environment: development
+  address: 127.0.0.1
+  port: 4567
+  chdir: /home/taf2/work/anerian/anerian/anerian/site
+  pid: /home/taf2/work/anerian/anerian/anerian/site/log/thin.pid
+  rackup: /home/taf2/work/anerian/anerian/anerian/site/rack.ru
+  log: /home/taf2/work/anerian/anerian/anerian/site/log/thin.log
+  max_conns: 512
+  timeout: 30
+  max_persistent_conns: 64
+  daemonize: false
