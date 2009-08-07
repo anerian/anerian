@@ -6,7 +6,7 @@
   group: deployer
   port: 7890
   pid: /var/www/apps/anerian/shared/pids/thin.pid
-  rackup: /var/www/apps/anerian/current/site/config/rack.ru
+  rackup: /var/www/apps/anerian/current/site/rack.ru
   log: /var/www/apps/anerian/shared/log/thin.log
   max_conns: 1024
   timeout: 30

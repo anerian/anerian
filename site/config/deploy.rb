@@ -48,6 +48,14 @@ after "deploy:update", "deploy:cleanup"
 role :web, "slice5"
 role :app, "slice5"
 
+desc "Re-establish symlinks"
+task :after_symlink, :roles => :app do
+  run <<-CMD
+    rm -rf #{release_path}/site/log &&
+    ln -nfs #{shared_path}/log #{release_path}/site/log
+  CMD
+end
+
 namespace :deploy do
   task :start, :roles => [:web, :app] do
     run "cd #{deploy_to}/current/site && nohup /usr/bin/thin -C config/thin.yml -R rack.ru start"
