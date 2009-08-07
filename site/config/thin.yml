@@ -1,12 +1,12 @@
 ---
   environment: production
-  chdir: /var/www/apps/anerian/current
+  chdir: /var/www/apps/anerian/current/site
   address: 127.0.0.1
   user: deployer
   group: deployer
   port: 7890
   pid: /var/www/apps/anerian/shared/pids/thin.pid
-  rackup: /var/www/apps/anerian/current/config/rack.ru
+  rackup: /var/www/apps/anerian/current/site/config/rack.ru
   log: /var/www/apps/anerian/shared/log/thin.log
   max_conns: 1024
   timeout: 30

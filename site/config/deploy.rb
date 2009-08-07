@@ -50,11 +50,11 @@ role :app, "slice5"
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current && nohup /usr/bin/thin -C config/thin.yml -R rack.ru start"
+    run "cd #{deploy_to}/current/site && nohup /usr/bin/thin -C config/thin.yml -R rack.ru start"
   end
  
   task :stop, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current && nohup /usr/bin/thin -C config/thin.yml -R rack.ru stop"
+    run "cd #{deploy_to}/current/site && nohup /usr/bin/thin -C config/thin.yml -R rack.ru stop"
   end
  
   task :restart, :roles => [:web, :app] do
