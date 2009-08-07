@@ -27,7 +27,6 @@ get '/:permalink' do
 end
 
 post '/:permalink' do
-  puts request.inspect
   if request.env['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest'
     erb find_view_from_path(params), :layout => false
   else
