@@ -47,3 +47,24 @@ after "deploy:update", "deploy:cleanup"
 
 role :web, "slice5"
 role :app, "slice5"
+
+namespace :deploy do
+  task :start, :roles => [:web, :app] do
+    run "cd #{deploy_to}/current && nohup /usr/bin/thin -C config/thin.yml -R rack.ru start"
+  end
+ 
+  task :stop, :roles => [:web, :app] do
+    run "cd #{deploy_to}/current && nohup /usr/bin/thin -C config/thin.yml -R rack.ru stop"
+  end
+ 
+  task :restart, :roles => [:web, :app] do
+    deploy.stop
+    deploy.start
+  end
+ 
+  # This will make sure that Capistrano doesn't try to run rake:migrate (this is not a Rails project!)
+  task :cold do
+    deploy.update
+    deploy.start
+  end
+end
