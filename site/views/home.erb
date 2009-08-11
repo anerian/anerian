@@ -4,7 +4,7 @@
     <video width="476" height="124" autobuffer autoplay>
       <source src="/videos/home/logo.mov" type="video/mp4"/>
       <source src="/videos/home/logo.ogv" type="video/ogg"/>
-      <img width="476" height="124" src="/images/hlogo.png"/>
+      <img id="plogo-fallback" width="476" height="124" src="/images/hlogo.png"/>
     </video>
   </div>
 </div>
@@ -56,6 +56,7 @@
         //console.log("start ended callback");
         // show the img
         video.hide();
+        ID("plogo-fallback").style.display = "none";
         ID("plogo").style.display = 'block';
         //console.log("called ended");
         } catch( e ) {
