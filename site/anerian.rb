@@ -3,6 +3,8 @@ require 'sinatra'
 require 'erb'
 $:.unshift 'lib'
 
+mime :ogv, 'video/ogg'
+
 configure do
   require 'env'
 end

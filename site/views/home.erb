@@ -1,5 +1,11 @@
 <div id="stage">
-  <img id="pload" src="/images/hlogo.png"/>
+  <div id="pload">
+    <img id="plogo" style="display:none" width="476" height="124" src="/images/hlogo.png"/>
+    <video width="476" height="124" autoplay>
+      <source src="/videos/home/logo.mov" type="video/mp4"/>
+      <img width="476" height="124" src="/images/hlogo.png"/>
+    </video>
+  </div>
 </div>
 <div id="sections">
   <div id="strategy" class="section">
@@ -24,3 +30,28 @@
   </div>
   <div class="clear"></div>
 </div>
+<% content_for :foot do %>
+  <script type="text/javascript" src="/scripts.js"></script>
+  <script type="text/javascript">
+    if( !html5VideoCheck() ) {
+      document.write('<' + 'script type="text/javascript" src="/scripts/flowplayer-3.1.2.min.js"' + '></' + 'script>');
+    }
+    window.onload = function() {
+      var video = new AnVideo(ID('pload'), {
+        flash: {
+          clip: {
+            url: "/videos/home/logo.mov",
+            autoPlay: true, 
+            autoBuffering: true
+          },
+          onLoad: function() { console.log(this); }
+        }
+      });
+      video.observe("ended", function() {
+        // show the img
+        video.hide();
+        ID("plogo").style.display = 'block';
+      });
+    }
+  </script>
+<% end %>

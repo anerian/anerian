@@ -211,7 +211,9 @@ body {
 #pload {
   left:225px;
   position:absolute;
-  top:100px;
+  top:140px;
+  width:476px;
+  height:124px;
 }
 #sections {
   margin-bottom:140px;
