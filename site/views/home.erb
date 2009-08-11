@@ -2,7 +2,7 @@
   <div id="pload">
     <img id="plogo" style="display:none" width="476" height="124" src="/images/hlogo.png"/>
     <video width="476" height="124" autoplay>
-      <source src="/videos/home/logo.mov" type="video/mp4"/>
+      <source src="/videos/home/logo.mov?" type="video/mp4"/>
       <img width="476" height="124" src="/images/hlogo.png"/>
     </video>
   </div>
@@ -40,6 +40,7 @@
       var video = new AnVideo(ID('pload'), {
         flash: {
           plugins: {
+            content: null,
             controls: null
           },
           clip: {
