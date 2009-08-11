@@ -75,18 +75,15 @@ function html5VideoCheck() {
 function AnVideo(el,options) { this.init(el,options); }
 AnVideo.prototype = {
   init: function(el,options) {
+    this.el = el;
     this.useNative = html5VideoCheck();
     if( this.useNative ) {
       this.video = el.getElementsByTagName('video')[0];
       this.video.play();
     }
     else {
-      this.video = $f(el, '/flash/flowplayer/flowplayer-3.1.2.swf', options.flash);
-      console.log(this.video);
-/*
-      this.video.getClip().onLastSecond = function() { console.log("flowplayer onLastSecond"); };
-      this.video.getClip().onStart = function(clip) { console.log("flowplayer onStart" + clip); };
-      */
+      $f(el, '/flash/flowplayer/flowplayer-3.1.2.swf', options.flash);
+      this.video = $f();
       this.video.play();
     }
   },
@@ -102,7 +99,12 @@ AnVideo.prototype = {
         console.error("unknown event: " + ev);
         break;
       }
-      this.video[ev] = cb;
+      //this.video[ev](cb);
+      /*this.video.onLastSecond( function() { console.log("flowplayer onLastSecond"); } );
+      this.video.onStart( function(clip) { console.log("flowplayer onStart" + clip); } );
+      */
+      //console.log("add cb");
+      this.video[ev]( cb );
     }
     else {
       console.log("observe: " + ev);
@@ -110,7 +112,11 @@ AnVideo.prototype = {
     }
   },
   hide: function() {
-    this.video.style.display = 'none';
+    if( this.useNative ) {
+      this.video.style.display = 'none';
+    } else {
+      this.video.unload();
+    }
   },
   show: function() {
     this.video.style.display = 'block';

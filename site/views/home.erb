@@ -39,18 +39,26 @@
     window.onload = function() {
       var video = new AnVideo(ID('pload'), {
         flash: {
+          plugins: {
+            controls: null
+          },
           clip: {
             url: "/videos/home/logo.mov",
             autoPlay: true, 
             autoBuffering: true
-          },
-          onLoad: function() { console.log(this); }
+          }
         }
       });
       video.observe("ended", function() {
+        try {
+        //console.log("start ended callback");
         // show the img
         video.hide();
         ID("plogo").style.display = 'block';
+        //console.log("called ended");
+        } catch( e ) {
+          console.error(e);
+        }
       });
     }
   </script>
