@@ -215,6 +215,11 @@ body {
   width:476px;
   height:124px;
 }
+#pload video {
+  position:relative;
+  width:476px;
+  height:124px;
+}
 #sections {
   margin-bottom:140px;
 }

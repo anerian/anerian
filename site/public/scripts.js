@@ -62,7 +62,7 @@ function log(msg) {
 function html5VideoCheck() {
   try {
     var vid = document.createElement("video");
-    if( vid.canPlayType && vid.canPlayType('video/mp4') ) {
+    if( vid.canPlayType && (vid.canPlayType('video/mp4') || vid.canPlayType('video/ogg')) ) {
       return true;
     }
     else {
@@ -79,7 +79,7 @@ AnVideo.prototype = {
     this.useNative = html5VideoCheck();
     if( this.useNative ) {
       this.video = el.getElementsByTagName('video')[0];
-      this.video.play();
+      //this.video.play();
     }
     else {
       $f(el, '/flash/flowplayer/flowplayer-3.1.2.swf', options.flash);
@@ -107,7 +107,6 @@ AnVideo.prototype = {
       this.video[ev]( cb );
     }
     else {
-      console.log("observe: " + ev);
       this.video.addEventListener(ev, cb, true);
     }
   },
