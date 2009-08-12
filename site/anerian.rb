@@ -19,6 +19,9 @@ get '/blog' do
   erb 'blog', :layout => true
 end
 
+post '/interest' do
+end
+
 def find_view_from_path(params)
   @path = params[:permalink]
   halt 404 if @path.match(/\.\./) or @path.match(/\//)

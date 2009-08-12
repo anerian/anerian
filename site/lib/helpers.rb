@@ -26,8 +26,11 @@ helpers do
     erb.result(binding)
   end
 
-  def partial(name)
+  def partial(name,options={})
     erb = ERB.new(File.read("#{AppRoot}/lib/partials/_#{name}.erb"))
+    options.each do|k,v|
+      instance_variable_set("@#{k}".to_sym, v)
+    end
     erb.result(binding)
   end
 
