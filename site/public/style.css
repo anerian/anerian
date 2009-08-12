@@ -288,6 +288,8 @@ body {
   left:0px;
   position:absolute;
   top:-20px;
+  border:1px solid #ccc;
+  border-top:none;
 }
 form.contact textarea {
   width:480px;

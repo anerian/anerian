@@ -26,4 +26,9 @@ helpers do
     erb.result(binding)
   end
 
+  def partial(name)
+    erb = ERB.new(File.read("#{AppRoot}/lib/partials/_#{name}.erb"))
+    erb.result(binding)
+  end
+
 end
