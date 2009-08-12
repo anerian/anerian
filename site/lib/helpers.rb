@@ -1,4 +1,6 @@
 require 'content_for'
+require 'rainpress'
+require 'css_content'
 require 'our_team'
 
 helpers do

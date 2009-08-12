@@ -72,10 +72,11 @@ function html5VideoCheck() {
     return false; // ie, or no video tag etc..
   }
 }
-function AnVideo(el,options) { this.init(el,options); }
+function AnVideo(el,cover,options) { this.init(el,cover,options); }
 AnVideo.prototype = {
-  init: function(el,options) {
+  init: function(el,cover,options) {
     this.el = el;
+    this.cover = cover;
     this.useNative = html5VideoCheck();
     if( this.useNative ) {
       this.video = el.getElementsByTagName('video')[0];
@@ -84,10 +85,15 @@ AnVideo.prototype = {
     else {
       $f(el, '/flash/flowplayer/flowplayer-3.1.2.swf', options.flash);
       this.video = $f();
-      this.video.play();
+      //this.video.play();
     }
   },
-  render: function() {
+  play: function() {
+    this.cover.style.display = 'none';
+    if( this.useNative ) {
+      this.video.style.display = 'block';
+    }
+    this.video.play();
   },
   observe: function(ev,cb) {
     if( !this.useNative ) {

@@ -7,6 +7,7 @@ mime :ogv, 'video/ogg'
 
 configure do
   require 'env'
+  $packer = Rainpress::Packer.new
 end
 
 get '/' do

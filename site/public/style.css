@@ -231,7 +231,7 @@ body {
 #team {
   position:absolute;
   top:-18px;
-  left:34px;
+  left:0px;
 }
 /* about styles */
 
@@ -239,12 +239,14 @@ body {
   height:300px;
 }
 
-#team-content .shell {
+.shell {
   background:transparent url(/images/about-box-left-border.png) repeat-y scroll right center;
-  width:950px;
   margin:0 auto;
 }
-#team-content .container {
+.shell {
+  width:1020px;
+}
+.container {
   background:transparent url(/images/about-container-grad.png) repeat-x scroll left bottom;
   border:1px solid #DCDCDC;
   margin-bottom:10px;
@@ -252,13 +254,13 @@ body {
   width:100%;
 }
 
-#team-content .container .box {
+.container .box {
 	float:left; 
-	width:459px; 
-	padding:14px 8px;
+	width:490px; 
+	padding:14px 10px;
 }
 
-#team-content .container h3 {
+.container h3 {
   color:#4a4a4a; 
   font-size:18px; 
   font-weight:bold; 
@@ -266,7 +268,7 @@ body {
   margin-bottom:.1em;
 }
 
-#team-content .container h4 {
+.container h4 {
   color:#a9a9a9; 
   font-size:16px; 
   font-weight:bold; 
@@ -278,82 +280,25 @@ body {
   display:block;
   text-indent:-9999px;
 }
-#strategy a.icon {
-  background:transparent url(/images/home/thumbnail_sprite_strategy.png) 0px 0px no-repeat;
+.dl {
+  position:relative;
+  height: 330px;
 }
-#strategy a.icon:hover {
-  background:transparent url(/images/home/thumbnail_sprite_strategy.png) 0px -207px no-repeat;
+.dl .banner {
+  left:0px;
+  position:absolute;
+  top:-20px;
 }
-#marketing a.icon {
-  background:transparent url(/images/home/thumbnail_sprite_marketing.png) 0px 0px no-repeat;
+form.contact textarea {
+  width:480px;
+  height:300px;
+  padding:4px;
 }
-#sections .sections:hover,
-#marketing a.icon:hover {
-  background:transparent url(/images/home/thumbnail_sprite_marketing.png) 0px -209px no-repeat;
+form.contact input[type="text"] {
+  border:1px solid #999;
+  width:480px;
+  padding:4px;
 }
-#interactive a.icon {
-  background:transparent url(/images/home/thumbnail_sprite_interactive.png) 0px 0px no-repeat;
-}
-#sections .sections:hover,
-#interactive a.icon:hover {
-  background:transparent url(/images/home/thumbnail_sprite_interactive.png) 0px -209px no-repeat;
-}
-#mobile a.icon {
-  background:transparent url(/images/home/thumbnail_sprite_mobile.png) 0px 0px no-repeat;
-}
-#sections .sections:hover,
-#mobile a.icon:hover {
-  background:transparent url(/images/home/thumbnail_sprite_mobile.png) 0px -210px no-repeat;
-}
-.consulting #sections .section {
-  float:left;
-  width:300px;
-}
-.consulting #innov a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninnovation.png) 0px 0px no-repeat;
-}
-.consulting #innov a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninnovation.png) 0px -207px no-repeat;
-}
-.consulting #strategy a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_conbusstrategy.png) 0px 0px no-repeat;
-}
-.consulting #strategy a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_conbusstrategy.png) 0px -205px no-repeat;
-}
-.consulting #marketing a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_conmarketing.png) 0px 0px no-repeat;
-}
-.consulting #marketing a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_conmarketing.png) 0px -206px no-repeat;
-}
-.consulting #interactive a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninteractive.png) 0px 0px no-repeat;
-}
-.consulting #interactive a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninteractive.png) 0px -206px no-repeat;
-}
-.consulting #talent a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_contalent.png) 0px 0px no-repeat;
-}
-.consulting #talent a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_contalent.png) 0px -205px no-repeat;
-}
-.lab #vcc a.icon {
-  background:transparent url(/images/lab/thumbnail_sprite_interactive.png) 0px 0px no-repeat;
-}
-.lab #vcc a.icon:hover {
-  background:transparent url(/images/lab/thumbnail_sprite_interactive.png) 0px -209px no-repeat;
-}
-.lab #vll a.icon {
-  background:transparent url(/images/lab/thumbnail_sprite_labvll.png) 0px 0px no-repeat;
-}
-.lab #vll a.icon:hover {
-  background:transparent url(/images/lab/thumbnail_sprite_labvll.png) 0px -206px no-repeat;
-}
-.lab #jobx a.icon {
-  background:transparent url(/images/lab/thumbnail_sprite_labjobs.png) 0px 0px no-repeat;
-}
-.lab #jobx a.icon:hover {
-  background:transparent url(/images/lab/thumbnail_sprite_labjobs.png) 0px -206px no-repeat;
+.contact h2 cite {
+  font-size:9px;
 }

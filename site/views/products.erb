@@ -1,0 +1,45 @@
+<% content_for :head do %>
+<style type="text/css">
+<% css_content do %>
+.products #vcc a.icon {
+  background:transparent url(/images/lab/thumbnail_sprite_interactive.png) 0px 0px no-repeat;
+}
+.products #vcc a.icon:hover {
+  background:transparent url(/images/lab/thumbnail_sprite_interactive.png) 0px -209px no-repeat;
+}
+.products #vll a.icon {
+  background:transparent url(/images/lab/thumbnail_sprite_labvll.png) 0px 0px no-repeat;
+}
+.products #vll a.icon:hover {
+  background:transparent url(/images/lab/thumbnail_sprite_labvll.png) 0px -206px no-repeat;
+}
+.products #jobx a.icon {
+  background:transparent url(/images/lab/thumbnail_sprite_labjobs.png) 0px 0px no-repeat;
+}
+.products #jobx a.icon:hover {
+  background:transparent url(/images/lab/thumbnail_sprite_labjobs.png) 0px -206px no-repeat;
+}
+<% end %>
+</style>
+<% end %>
+<h1>Products</h1>
+<div id="sections">
+  <div id="vcc" class="section">
+    <a rel="lightbox" class="icon" href="/vcc"></a>
+    <h2>Virtual Conference Center</h2>
+  </div>
+  <div id="vll" class="section">
+    <a rel="lightbox" class="icon" href="/vll"></a>
+    <h2>Video Learning Lab</h2>
+  </div>
+  <div id="jobx" class="section">
+    <a rel="lightbox" class="icon" href="/jobx"></a>
+    <h2>Job eXchange</h2>
+  </div>
+</div>
+<% content_for :head do %>
+  <link href="/css/lightbox.css" type="text/css" rel="stylesheet"/>
+<% end %>
+<% content_for :foot do %>
+  <script type="text/javascript" src="/js/lb.js"></script>
+<% end %>

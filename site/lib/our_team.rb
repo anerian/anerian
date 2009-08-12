@@ -5,12 +5,6 @@ module Sinatra
       yield
       @_out_buf << %(</p></div>)
     end
-
-    private
-
-      def content_blocks
-        @content_blocks ||= Hash.new {|h,k| h[k] = [] }
-      end
   end
   helpers OurTeam
 end
