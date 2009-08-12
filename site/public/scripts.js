@@ -1,44 +1,8 @@
 var IE6 = false /*@cc_on || @_jscript_version < 5.7 @*/;
 
-if( IE6 ) {
-  alert("We are very sorry IE6 is no longer a supported browser.  Please Upgrade");
-}
-
 var openMenuId = null;
 
 function ID(id) { return document.getElementById(id); }
-
-function openMenu(id) {
-  if( openMenuId ) { ID(openMenuId).style.display = "none"; releaseCloseEvent(); }
-  ID(id).style.display = "block";
-  openMenuId = id;
-  attachCloseEvent();
-  return false;
-}
-
-function closeMenu(e) {
-  var evt = e || window.event;
-  var menu = ID(openMenuId);
-  var root = ID(openMenuId + '-root');
-  var target = evt.target || evt.srcElement;
-  if( !isParent(target, menu) && !isParent(target, root) ) {
-    if( openMenuId ) { ID(openMenuId).style.display = "none"; }
-    releaseCloseEvent();
-    openMenuId = null;
-  }
-}
-
-function attachCloseEvent() {
-  try {
-    attachEvt(document.body,'click', closeMenu);
-  } catch( e ) {
-    console.error(e);
-  }
-}
-
-function releaseCloseEvent() {
-  detachEvt(document.body,'click', closeMenu);
-}
 
 function isParent(chkEl,topEl) {
   if( chkEl == topEl ) { return true; }
@@ -79,7 +43,81 @@ if( !Function.prototype.bind ) {
     }
   }
 }
+if( !Function.prototype.bindAsEventListener ) {
+  Function.prototype.bindAsEventListener = function () {
+    var args = new Array();
+    var __method = this;
+    for( var i = 0, len = arguments.length; i < len; ++i ) { args.push(arguments[i]); }
+    var object = args.shift();
+    return function(event) {
+      return __method.apply(object, [event || window.event].concat(args));
+    }
+  }
+}
 
 function log(msg) {
   ID('debug').innerHTML += msg + "<br/>";
 }
+
+function html5VideoCheck() {
+  try {
+    var vid = document.createElement("video");
+    if( vid.canPlayType && (vid.canPlayType('video/mp4') || vid.canPlayType('video/ogg')) ) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  } catch( e ) {
+    return false; // ie, or no video tag etc..
+  }
+}
+function AnVideo(el,options) { this.init(el,options); }
+AnVideo.prototype = {
+  init: function(el,options) {
+    this.el = el;
+    this.useNative = html5VideoCheck();
+    if( this.useNative ) {
+      this.video = el.getElementsByTagName('video')[0];
+      //this.video.play();
+    }
+    else {
+      $f(el, '/flash/flowplayer/flowplayer-3.1.2.swf', options.flash);
+      this.video = $f();
+      this.video.play();
+    }
+  },
+  render: function() {
+  },
+  observe: function(ev,cb) {
+    if( !this.useNative ) {
+      switch(ev) {
+      case 'ended':
+        ev = 'onFinish';
+        break;
+      default:
+        console.error("unknown event: " + ev);
+        break;
+      }
+      //this.video[ev](cb);
+      /*this.video.onLastSecond( function() { console.log("flowplayer onLastSecond"); } );
+      this.video.onStart( function(clip) { console.log("flowplayer onStart" + clip); } );
+      */
+      //console.log("add cb");
+      this.video[ev]( cb );
+    }
+    else {
+      this.video.addEventListener(ev, cb, true);
+    }
+  },
+  hide: function() {
+    if( this.useNative ) {
+      this.video.style.display = 'none';
+    } else {
+      this.video.unload();
+    }
+  },
+  show: function() {
+    this.video.style.display = 'block';
+  }
+};

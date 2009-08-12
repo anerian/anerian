@@ -1,26 +1,68 @@
 <div id="stage">
-  <img id="pload" src="/images/hlogo.png"/>
+  <div id="pload">
+    <img id="plogo" style="display:none" width="476" height="124" src="/images/hlogo.png"/>
+    <video width="476" height="124" autobuffer autoplay>
+      <source src="/videos/home/logo.mov" type="video/mp4"/>
+      <source src="/videos/home/logo.ogv" type="video/ogg"/>
+      <img id="plogo-fallback" width="476" height="124" src="/images/hlogo.png"/>
+    </video>
+  </div>
 </div>
 <div id="sections">
   <div id="strategy" class="section">
-    <h2><a href="#strategy">Strategy</a></h2>
+    <h2><a href="/strategy">Strategy</a></h2>
     <cite>Leveraging assets and technologies</cite>
-    <a class="icon" href="#strategy">Strategy Consulting and Business Solutions</a>
+    <a class="icon" href="/strategy">Strategy Consulting and Business Solutions</a>
   </div>
   <div id="marketing" class="section">
-    <h2><a href="#marketing">Marketing</a></h2>
+    <h2><a href="/marketing">Marketing</a></h2>
     <cite>Generating maximum traffic and revenue</cite>
-    <a class="icon" href="#marketing">Marketing Promotion and SEO/SEM</a>
+    <a class="icon" href="/marketing">Marketing Promotion and SEO/SEM</a>
   </div>
   <div id="interactive" class="section">
-    <h2><a href="#interactive">Interactive</a></h2>
+    <h2><a href="/interactive">Interactive</a></h2>
     <cite>We understand how to drive change</cite>
-    <a class="icon" href="#interactive">Interactive Media Applications</a>
+    <a class="icon" href="/interactive">Interactive Media Applications</a>
   </div>
   <div id="mobile" class="section">
-    <h2><a href="#mobile">Mobile</a></h2>
+    <h2><a href="/mobile">Mobile</a></h2>
     <cite>Leading developers of mobile applications</cite>
-    <a class="icon" href="#mobile">Mobile Applications</a>
+    <a class="icon" href="/mobile">Mobile Applications</a>
   </div>
   <div class="clear"></div>
 </div>
+<% content_for :foot do %>
+  <script type="text/javascript" src="/scripts.js"></script>
+  <script type="text/javascript">
+    if( !html5VideoCheck() ) {
+      document.write('<' + 'script type="text/javascript" src="/scripts/flowplayer-3.1.2.min.js"' + '></' + 'script>');
+    }
+    window.onload = function() {
+      var video = new AnVideo(ID('pload'), {
+        flash: {
+          plugins: {
+            content: null,
+            controls: null
+          },
+          clip: {
+            url: "/videos/home/logo.mov",
+            autoPlay: true, 
+            autoBuffering: true
+          }
+        }
+      });
+      video.observe("ended", function() {
+        try {
+        //console.log("start ended callback");
+        // show the img
+        video.hide();
+        ID("plogo-fallback").style.display = "none";
+        ID("plogo").style.display = 'block';
+        //console.log("called ended");
+        } catch( e ) {
+          console.error(e);
+        }
+      });
+    }
+  </script>
+<% end %>
