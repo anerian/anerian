@@ -215,6 +215,11 @@ body {
   width:476px;
   height:124px;
 }
+#pload img {
+  position:absolute;
+  top:1px;
+  left:1px;
+}
 #pload video {
   position:relative;
   width:476px;
