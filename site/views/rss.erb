@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+
+<channel>
+  <title>Anerian LLC</title>
+  <link>http://anerian.com/</link>
+  <description>Delivering Innovative Solutions</description>
+  <% for post in @posts do %>
+    <item>
+      <title><%= ERB::Util.h(post.post_title) %></title>
+      <link>http://anerian.com/<%= ERB::Util.h(post.permalink) %></link>
+      <description><%= ERB::Util.h(post.excerpt) %></description>
+      <dc:creator>Anerian LLC</dc:creator>
+    </item>
+  <% end %>
+</channel>
+</rss>

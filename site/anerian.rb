@@ -27,6 +27,12 @@ end
 post '/interest' do
 end
 
+get '/feed' do
+  @posts = Post.find(:all, :limit => 10, :conditions => {:post_type => 'post', :post_status => 'publish'},
+                           :order => 'post_date DESC')
+  erb :rss, :layout => false
+end
+
 def find_view_from_path(params)
   @path = params[:permalink]
   path = "#{AppRoot}/views/#{@path}.erb"

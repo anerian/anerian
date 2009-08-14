@@ -321,3 +321,8 @@ div.post h2 { margin-bottom:0px; margin-top:10px; }
 .blog .boxr {
   width: 270px;
 }
+.digg {
+  float:right;
+  width:54px;
+  height:80px;
+}
