@@ -105,11 +105,6 @@ AnVideo.prototype = {
         console.error("unknown event: " + ev);
         break;
       }
-      //this.video[ev](cb);
-      /*this.video.onLastSecond( function() { console.log("flowplayer onLastSecond"); } );
-      this.video.onStart( function(clip) { console.log("flowplayer onStart" + clip); } );
-      */
-      //console.log("add cb");
       this.video[ev]( cb );
     }
     else {
