@@ -13,18 +13,19 @@ class Post < ActiveRecord::Base
         ps.each do|p|
           excerpt += "<p>#{p.inner_html}</p>"
         end
-        excerpt
+        "#{excerpt}<a href='/#{ permalink }'>Read more...</a>"
       end
     else
-      post_excerpt
+      "#{post_excerpt}<a href='/#{ permalink }'>Read more...</a>"
     end
   end
 
   def permalink
-    parts = []
-    post_title.gsub(/\s/, '-').gsub(/[^\w-]/, '').downcase.squeeze('-').split('-').each do|p|
-      parts << p
-    end
-    "#{parts.join('-')}/#{post_date_gmt.strftime('%Y.%m.%d')}"
+    #parts = []
+    #post_title.gsub(/\s/, '-').gsub(/[^\w-]/, '').downcase.squeeze('-').split('-').each do|p|
+    #  parts << p
+    #end
+    # parts.join('-')
+    "#{post_name}/#{post_date_gmt.strftime('%Y.%m.%d')}"
   end
 end
