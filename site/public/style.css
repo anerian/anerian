@@ -312,7 +312,12 @@ form.contact input[type="text"] {
 div.post { clear:both; margin-bottom:20px; }
 div.post h2 { margin-bottom:0px; margin-top:10px; }
 .post .shell,
-.blog .shell { background:transparent url(/images/blog-box-left-border.png) repeat-y scroll right center; }
+.blog .shell { background:transparent; }
+.post .container,
+.blog .container {
+  padding:10px;
+  width:1000px;
+}
 .post .boxl,
 .blog .boxl {
   width: 700px;
