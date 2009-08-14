@@ -29,22 +29,24 @@ end
 
 def find_view_from_path(params)
   @path = params[:permalink]
-  return nil if @path.match(/\.\./) or @path.match(/\//) or !File.exist?("#{AppRoot}/views/#{@path}.erb")
+  path = "#{AppRoot}/views/#{@path}.erb"
+  halt 404 if @path.match(/\.\./) or @path.match(/\//) or !File.exist?(path)
   @path.to_sym
 end
 
+# pages
+get '/:permalink' do
+  erb find_view_from_path(params), :layout => true
+end
+
+# blog posts
 get '/:permalink/:date' do
-  view = find_view_from_path(params)
-  if view
-    erb view, :layout => true
-  else
-    # maybe it's a blog post?
-    posts = Post.find(:all, :conditions => ["post_name=? and DATE_FORMAT(post_date_gmt,'%Y.%m.%d')=? and post_status='publish'",params[:permalink],params[:date]])
-    halt 404 if posts.blank?
-    @post = posts.first
-    @path = 'post'
-    erb :post, :layout => true
-  end
+  # maybe it's a blog post?
+  posts = Post.find(:all, :conditions => ["post_name=? and DATE_FORMAT(post_date_gmt,'%Y.%m.%d')=? and post_status='publish'",params[:permalink],params[:date]])
+  halt 404 if posts.blank?
+  @post = posts.first
+  @path = 'post'
+  erb :post, :layout => true
 end
 
 # XXX: was for lightbox but we nixed that
