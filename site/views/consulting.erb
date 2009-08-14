@@ -1,65 +1,32 @@
-<% content_for :head do %>
-<style type="text/css">
-<% css_content do %>
-.consulting #sections .section {
-  float:left;
-  width:300px;
-}
-.consulting #innov a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninnovation.png) 0px 0px no-repeat;
-}
-.consulting #innov a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninnovation.png) 0px -207px no-repeat;
-}
-.consulting #strategy a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_conbusstrategy.png) 0px 0px no-repeat;
-}
-.consulting #strategy a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_conbusstrategy.png) 0px -205px no-repeat;
-}
-.consulting #marketing a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_conmarketing.png) 0px 0px no-repeat;
-}
-.consulting #marketing a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_conmarketing.png) 0px -206px no-repeat;
-}
-.consulting #interactive a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninteractive.png) 0px 0px no-repeat;
-}
-.consulting #interactive a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_coninteractive.png) 0px -206px no-repeat;
-}
-.consulting #talent a.icon {
-  background:transparent url(/images/consulting/thumbnail_sprite_contalent.png) 0px 0px no-repeat;
-}
-.consulting #talent a.icon:hover {
-  background:transparent url(/images/consulting/thumbnail_sprite_contalent.png) 0px -205px no-repeat;
-}
-<% end %>
-</style>
-<% end %>
-<h1>Consulting</h1>
-<p>As Management Consultants, Anerian has the ability to quickly develop more efficient and effective solutions for key business initiatives.</p>
-<div id="sections">
-  <div id="innov" class="section">
-    <a rel="lightbox" class="icon" href="/innovation"></a>
-    <h2>Innovation Forum</h2>
-    <p>Highly Interactive Strategic Planning...<br/><a href="/innovation">Learn More</a></p>
-  </div>
-  <div id="strategy" class="section">
-    <a rel="lightbox" class="icon" href="/strategy"></a>
-    <h2>Business Strategy</h2>
-    <p>Benchmark your firm against the best...<br/><a href="/strategy">Learn More</a></p>
-  </div>
-  <div id="talent" class="section">
-    <a rel="lightbox" class="icon" href="/talent"></a>
-    <h2>CXO Coaching and advisory services</h2>
-    <p>A few hours with Anerian will make your job more enjoyable...<br/><a href="/talent">Learn More</a></p>
+<div class="dl">
+  <img class="banner" height="331px" width="1020px" src="/images/strategy/dl_strategy.jpg"/>
+</div>
+<div class="shell">
+  <div class="container">
+    <div class="box">
+      <h1>Consulting</h1>
+      <p>As Management Consultants, Anerian has the ability to quickly develop more efficient and effective solutions for key business initiatives.</p>
+      <h2>Innovation Forum and Workshops </h2>
+      <img alt="Innovation" style="float:left;margin-right:20px;margin-top:10px;" src="/images/consulting/innovation.png"/>
+      <ul>
+        <li><strong>Problem</strong> - The most used -- and least understood phrase in business -- is 'innovation to drive change'. While many businesses realize that change is needed, particularly in this economy, they don't always understand that underlying problems are structural in nature and can’t be addressed with conventional thinking, strategies and tactics.  </li>
+        <li><strong>Solution</strong> - Anerian is a recognized expert in new ways of thinking about old business problems. As innovators, we have introduced dozens of revenue-enhancing products, spearheaded massive changes in organizations and devised whole new models to crack daunting challenges like: Runaway IT budgets, virtual learning, social entrepreneurship and failing business models. </li>
+        <li><strong>Story</strong> - A 100-year-old media company seeking new revenue sources to replace outdated product offerings and ineffective advertising came to Anerian for new solutions. In fewer than 60 days, Anerian devised new market- and product strategies and simulations that, for the first time in years, reinvigorated the company's offerings and reversed its revenue decline.  </li>
+        <li><strong>Impact</strong> - The company now has a strategy for leveraging existing assets and technologies without having to rely on major investments to drive new revenue and deliver value to its customers. </li>
+      </ul>
+      <h2>Talent and Learning Solutions</h2>
+      <img alt="Talent" style="float:left;margin-right:20px;margin-top:10px;" src="/images/consulting/talent.png"/>
+      <p>Creating a culture with a bias towards investing in new thinking around tools, processes and culture</p>
+      <ul>
+        <li><strong>Problem</strong>: An energy company outsourced the maintenance of its web site to a third party. The contract between the two parties resulted in micromanagement, reactive and inefficient maintenance and otherwise mismanagement. The focus became the task at hand -- not the customer.</li>
+        <li><strong>Solution</strong>: Anerian helped the two parties collaborate in developing a "new way of working" that led to local decision making, proactive and efficient maintenance and customer-focused work.  </li>
+        <li><strong>Story</strong>: This collaborative, new work approach took various forms: Joint workshops, joint problem solving, mixed project teams and jointly led learning events. Together, the parties designed, developed and delivered a comprehensive work plan that included streamlined processes, one structure (not two), outcome-based performance measures and a joint Centre of Excellence.  </li>
+        <li><strong>Impact</strong>: The value of this approach led to the realization of immediate benefits. What's more, employees described the project in terms of "real culture change". As one employee said: "I can finally do my job without someone looking over my shoulder the whole time. Its led to massive performance improvements in the way my team handles customer requests". The bottom line results have been equally impressive with downtime reduced and customer satisfaction scores and revenue increased.  </li>
+      </ul>
+    </div>
+    <div class="box contact">
+      <%= partial(:contact_us, {:target => 'Consulting Services'}) %>
+    </div>
+    <div class="clear"></div>
   </div>
 </div>
-<% content_for :head do %>
-  <link href="/css/lightbox.css" type="text/css" rel="stylesheet"/>
-<% end %>
-<% content_for :foot do %>
-  <script type="text/javascript" src="/js/lb.js"></script>
-<% end %>
