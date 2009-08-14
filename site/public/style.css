@@ -304,3 +304,19 @@ form.contact input[type="text"] {
 .contact h2 cite {
   font-size:9px;
 }
+/* blog styles */
+img.alignleft { float:left; margin-right:20px; }
+.excerpt { clear:both; }
+.excerpt p { clear:both; }
+div.post { clear:both; margin-bottom:20px; }
+div.post h2 { margin-bottom:0px; margin-top:10px; }
+.post .shell,
+.blog .shell { background:transparent url(/images/blog-box-left-border.png) repeat-y scroll right center; }
+.post .boxl,
+.blog .boxl {
+  width: 700px;
+}
+.post .boxr,
+.blog .boxr {
+  width: 270px;
+}

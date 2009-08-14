@@ -1,0 +1,18 @@
+<div class="shell">
+  <div class="container">
+    <div class="box boxl">
+      <h1><%= @post.post_title %></h1>
+      <div class="info">
+        <span class="date">Posted <%= @post.post_date_gmt.strftime('%B %e, %Y') %></span>
+        <span class="author"><%= @post.post_author %></span>
+      </div>
+      <div class="post">
+        <%= @post.post_content %>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="box boxr">
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

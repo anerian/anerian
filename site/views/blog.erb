@@ -1,0 +1,25 @@
+<div class="dl">
+  <img class="banner" height="331px" width="1020px" src="/images/strategy/dl_strategy.jpg"/>
+</div>
+<div class="shell">
+  <div class="container">
+    <div class="box boxl">
+      <h1>Insights</h1>
+      <% for post in @posts do %>
+      <div class="post">
+        <h2><a href="/<%= post.permalink %>"><%= post.post_title %></a></h2>
+        <div class="excerpt">
+          <%= post.excerpt %>
+          <a href="/<%= post.permalink %>">Read more...</a>
+          <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <% end %>
+      <a href="/blog?page=<%= @page+1 %>">More</a>
+    </div>
+    <div class="box boxr">
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
