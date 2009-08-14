@@ -4,7 +4,7 @@
     </div>
   </div>
   <%
-    employees = %({"employees":[{"img":"/flash/steve.png","name":"Steve Lynott","url":"#"},{"img":"/flash/marty.png","name":"Marty Fisher","url":"#"},{"img":"/flash/sonu.png","name":"Sonu Singh","url":"#"},{"img":"/flash/regina.png","name":"Regina Perkins"},{"img":"/flash/ed.png","name":"Ed Anderson","url":"#"}, {"img":"/flash/donna.png","name":"Donna Engelgau","url":"#"},{"img":"/flash/todd.png","name":"Todd Fisher","url":"#"},{"img":"/flash/jon.png","name":"Jonathan Phillips","url":"#"},{"img":"/flash/zach.png","name":"Zach Hannes","url":"#"},{"img":"/flash/corrie.png","name":"Corrie Davidson","url":"#"},{"img":"/flash/liz.png","name":"Liz Wheatley","url":"#"},{"img":"/flash/renee.png","name":"Renee Alarid","url":"#"},{"img":"/flash/beata.png","name":"Beata Dobrocsi","url":"#"}]})
+    employees = %({"employees":[{"img":"/flash/steve.png","name":"Steve Lynott","url":"#"},{"img":"/flash/marty.png","name":"Marty Fisher","url":"#"},{"img":"/flash/sonu.png","name":"Sonu Singh","url":"#"},{"img":"/flash/regina.png","name":"Regina Perkins"},{"img":"/flash/ed.png","name":"Ed Anderson","url":"#"}, {"img":"/flash/todd.png","name":"Todd Fisher","url":"#"},{"img":"/flash/jon.png","name":"Jonathan Phillips","url":"#"},{"img":"/flash/zach.png","name":"Zach Hannes","url":"#"},{"img":"/flash/corrie.png","name":"Corrie Davidson","url":"#"},{"img":"/flash/liz.png","name":"Liz Wheatley","url":"#"},{"img":"/flash/renee.png","name":"Renee Alarid","url":"#"},{"img":"/flash/beata.png","name":"Beata Dobrocsi","url":"#"}]})
     people = URI.encode(employees);
   %>
   <script type="text/javascript" src="/scripts/swfobject.js"></script>
@@ -60,7 +60,14 @@
         One of our employees came up with the name and we thought it was a great idea. It's 
         short, simple, distinctive, and meaningful – plus it's a great conversation starter!
         </p>
-        <div style="width: 459px; height: 360px;" id="saiweb_a9d515d20ca29b9d7c84184a5034096d"><embed height="100%" width="100%" flashvars='config={"key":"false","plugins":{"controls":{"buttonOverColor":"","sliderColor":"","bufferColor":"","sliderGradient":"none","progressGradient":"medium","durationColor":"","progressColor":"","backgroundColor":"","timeColor":"","buttonColor":"","backgroundGradient":"none","bufferGradient":"none","opacity":1}},"clip":{"url":"http://anerian.ws/files/NGQxNGU1ZGI1YTI0/1wc4Ob3N5gme.flv","autoPlay":false,"autoBuffering":false},"playerId":"saiweb_a9d515d20ca29b9d7c84184a5034096d","playlist":[{"url":"http://anerian.ws/files/NGQxNGU1ZGI1YTI0/1wc4Ob3N5gme.flv","autoPlay":false,"autoBuffering":false}]}' name="saiweb_a9d515d20ca29b9d7c84184a5034096d_api" bgcolor="#000000" id="saiweb_a9d515d20ca29b9d7c84184a5034096d_api" pluginspage="http://www.adobe.com/go/getflashplayer" type="application/x-shockwave-flash" quality="high" allowscriptaccess="always" allowfullscreen="true" src="http://www.anerian.com/wp-content/plugins/word-press-flow-player/flowplayer/flowplayer.commercial-3.0.3.swf"/></div>
+        <div style="width: 459px; height: 360px;">
+          <script type="text/javascript" src="/scripts/tools.flashembed-1.0.3.min.js"></script>
+          <script type="text/javascript">
+            var config = {config: {plugins:{controls:{sliderGradient:"none",progressGradient:"medium",durationColor:"",backgroundGradient:"none",bufferGradient:"none",opacity:1}},clip:{url:"http://anerian.ws/files/NGQxNGU1ZGI1YTI0/1wc4Ob3N5gme.flv",autoPlay:false,autoBuffering:false}}};
+            flashembed("team-video", '/flash/flowplayer/flowplayer-3.1.2.swf', config); 
+          </script>
+          <div id="team-video" style="width:459px;height:360px;"></div>
+        </div>
       </div>
       <div class="clear"></div>
     </div>
@@ -159,14 +166,6 @@
         graduate program in conceptual drawings using AutoCAD.
       <% end %>
       <div class="clear"></div>
-      <% team_member('Donna Engelgau', 'VP & Interactive Media') do %>
-        Donna is a content strategist with more than 30 years of experience in editorial strategy/planning, content
-        development, analysis, and management. Her solid background includes developing programming plans and
-        creating compelling and engaging content. She has held senior-level roles with leading online media
-        companies, including Discovery Communications and Revolution Health Group. A former star reporter and editor,
-        Donna has worked for every type of publication‚ daily and weekly newspapers, news services, magazines, newsletters,
-        and the web. Donna also has an extensive healthcare background, having covered health issues, policy and legislation for many years.
-      <% end %>
       <% team_member('Renee Alarid','Senior Visual Designer') do %>
         Renee is an experienced graphic designer within the print, web and motion graphic fields. 
         She also has experience with CSS, HTML and Information Architecture. She comes to Anerian with
