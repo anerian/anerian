@@ -68,37 +68,62 @@
   <script type="text/javascript" src="/scripts.js"></script>
   <script type="text/javascript">
     if( !html5VideoCheck() ) {
-      document.write('<' + 'script type="text/javascript" src="/scripts/flowplayer-3.1.2.min.js"' + '></' + 'script>');
+      document.write('<' + 'script type="text/javascript" src="/scripts/tools.flashembed-1.0.3.min.js"' + '></' + 'script>');
     }
     window.onload = function() {
-      var video = new AnVideo(ID('pload'), ID('plogo'), {
-        flash: {
-          plugins: {
-            content: null,
-            controls: null
-          },
-          clip: {
-            url: "/videos/home/logo.mov",
-            autoPlay: true, 
-            autoBuffering: true
-          }
-        }
-      });
+      var video = new AnVideo(ID('pload'), ID('plogo'));
 
       video.observe("ended", function() {
-        try {
-        //console.log("start ended callback");
-        // show the img
         video.hide();
-        //ID("plogo-fallback").style.display = "none";
         ID("plogo").style.display = 'block';
-        //console.log("called ended");
-        } catch( e ) {
-          console.error(e);
-        }
       });
 
       video.play();
     }
+
+    vidCB = function(){ };
+    function flashCB() {
+      vidCB();
+    }
+
+    function AnVideo(el,cover,options) { this.init(el,cover,options); }
+    AnVideo.prototype = {
+      init: function(el,cover,options) {
+        this.el = el;
+        this.cover = cover;
+        this.useNative = html5VideoCheck();
+        if( this.useNative ) {
+          this.video = el.getElementsByTagName('video')[0];
+        }
+        else {
+          this.parentNode = el.parentNode;
+          this.originalHTML = el.parentNode.innerHTML;
+          this.video = flashembed(el,{src:'/flash/video-lite/anerian_video.swf',wmode:'transparent'}, {videoUrl:'/videos/home/logo.mov',funcString:'flashCB'});
+          vid = this.video;
+        }
+      },
+      play: function() {
+        this.cover.style.display = 'none';
+        if( this.useNative ) {
+          this.video.style.display = 'block';
+          this.video.play();
+        }
+      },
+      observe: function(ev,cb) {
+        if( !this.useNative ) {
+          vidCB = cb;
+        }
+        else {
+          this.video.addEventListener(ev, cb, true);
+        }
+      },
+      hide: function() {
+        if( this.useNative ) {
+          this.video.style.display = 'none';
+        } else {
+          this.parentNode.innerHTML = this.originalHTML;
+        }
+      }
+    };
   </script>
 <% end %>

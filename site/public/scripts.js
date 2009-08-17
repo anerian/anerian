@@ -55,10 +55,6 @@ if( !Function.prototype.bindAsEventListener ) {
   }
 }
 
-function log(msg) {
-  ID('debug').innerHTML += msg + "<br/>";
-}
-
 function html5VideoCheck() {
   try {
     var vid = document.createElement("video");
@@ -72,53 +68,3 @@ function html5VideoCheck() {
     return false; // ie, or no video tag etc..
   }
 }
-function AnVideo(el,cover,options) { this.init(el,cover,options); }
-AnVideo.prototype = {
-  init: function(el,cover,options) {
-    this.el = el;
-    this.cover = cover;
-    this.useNative = html5VideoCheck();
-    if( this.useNative ) {
-      this.video = el.getElementsByTagName('video')[0];
-      //this.video.play();
-    }
-    else {
-      $f(el, '/flash/flowplayer/flowplayer-3.1.2.swf', options.flash);
-      this.video = $f();
-      //this.video.play();
-    }
-  },
-  play: function() {
-    this.cover.style.display = 'none';
-    if( this.useNative ) {
-      this.video.style.display = 'block';
-    }
-    this.video.play();
-  },
-  observe: function(ev,cb) {
-    if( !this.useNative ) {
-      switch(ev) {
-      case 'ended':
-        ev = 'onFinish';
-        break;
-      default:
-        console.error("unknown event: " + ev);
-        break;
-      }
-      this.video[ev]( cb );
-    }
-    else {
-      this.video.addEventListener(ev, cb, true);
-    }
-  },
-  hide: function() {
-    if( this.useNative ) {
-      this.video.style.display = 'none';
-    } else {
-      this.video.unload();
-    }
-  },
-  show: function() {
-    this.video.style.display = 'block';
-  }
-};
