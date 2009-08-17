@@ -67,7 +67,8 @@
 <% content_for :foot do %>
   <script type="text/javascript" src="/scripts.js"></script>
   <script type="text/javascript">
-    if( !html5VideoCheck() ) {
+    var HTML5Video = html5VideoCheck();
+    if( !HTML5Video ) {
       document.write('<' + 'script type="text/javascript" src="/scripts/tools.flashembed-1.0.3.min.js"' + '></' + 'script>');
     }
     window.onload = function() {
@@ -79,7 +80,7 @@
       });
 
       video.play();
-    }
+    };
 
     vidCB = function(){ };
     function flashCB() {
@@ -91,8 +92,7 @@
       init: function(el,cover,options) {
         this.el = el;
         this.cover = cover;
-        this.useNative = html5VideoCheck();
-        if( this.useNative ) {
+        if( HTML5Video ) {
           this.video = el.getElementsByTagName('video')[0];
         }
         else {
@@ -104,13 +104,13 @@
       },
       play: function() {
         this.cover.style.display = 'none';
-        if( this.useNative ) {
+        if( HTML5Video ) {
           this.video.style.display = 'block';
           this.video.play();
         }
       },
       observe: function(ev,cb) {
-        if( !this.useNative ) {
+        if( !HTML5Video ) {
           vidCB = cb;
         }
         else {
@@ -118,7 +118,7 @@
         }
       },
       hide: function() {
-        if( this.useNative ) {
+        if( HTML5Video ) {
           this.video.style.display = 'none';
         } else {
           this.parentNode.innerHTML = this.originalHTML;
