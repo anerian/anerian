@@ -125,11 +125,11 @@ body {
   height:66px;
   color:#fff;
 }
+#header h3 a.selected,
 #header h3 a:hover {
  /* text-decoration:underline;*/
   text-shadow: 1px 1px 5px #fff;
   cursor:pointer;
-  /*background:transparent url(/images/glow.png) no-repeat center;*/
 }
 .ie #header h3 a {
 /*  background:#FAA61F;*/
