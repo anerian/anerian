@@ -2,6 +2,8 @@ require 'content_for'
 require 'rainpress'
 require 'css_content'
 require 'our_team'
+require 'jsmin'
+require 'js_content'
 
 helpers do
 

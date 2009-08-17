@@ -65,8 +65,13 @@
   <div class="clear"></div>
 </div>
 <% content_for :foot do %>
+<% if RACK_ENV=='production' %>
+  <script type="text/javascript" src="/scripts-min.js"></script>
+<% else %>
   <script type="text/javascript" src="/scripts.js"></script>
+<% end %>
   <script type="text/javascript">
+  <% js_content do %>
     var HTML5Video = html5VideoCheck();
     if( !HTML5Video ) {
       document.write('<' + 'script type="text/javascript" src="/scripts/tools.flashembed-1.0.3.min.js"' + '></' + 'script>');
@@ -125,5 +130,6 @@
         }
       }
     };
+    <% end %>
   </script>
 <% end %>
