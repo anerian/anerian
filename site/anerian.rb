@@ -33,25 +33,6 @@ get '/feed' do
   erb :rss, :layout => false
 end
 
-def find_view_from_path(params)
-  @path = params[:permalink]
-  path = "#{AppRoot}/views/#{@path}.erb"
-  return false if @path.match(/\.\./) or @path.match(/\//) or !File.exist?(path)
-  @path.to_sym
-end
-
-def get_post(params)
-  if params[:date].blank?
-    posts = Post.find(:all, :conditions => ["post_name=? and post_status='publish'", params[:permalink]])
-  else
-    posts = Post.find(:all, :conditions => ["post_name=? and DATE_FORMAT(post_date_gmt,'%Y.%m.%d')=? and post_status='publish'",
-                            params[:permalink],params[:date]])
-  end
-  halt 404 if posts.blank?
-
-  @post = posts.first
-end
-
 # pages
 get '/:permalink' do
   view = find_view_from_path(params)
@@ -71,15 +52,26 @@ get '/:permalink/:date' do
   erb :post, :layout => true
 end
 
-# XXX: was for lightbox but we nixed that
-#post '/:permalink' do
-#  if request.env['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest'
-#    erb find_view_from_path(params), :layout => false
-#  else
-#    erb find_view_from_path(params), :layout => true
-#  end
-#end
-
 not_found do
   'This is nowhere to be found'
 end
+
+def find_view_from_path(params)
+  @path = params[:permalink]
+  path = "#{AppRoot}/views/#{@path}.erb"
+  return false if @path.match(/\.\./) or @path.match(/\//) or !File.exist?(path)
+  @path.to_sym
+end
+
+def get_post(params)
+  if params[:date].blank?
+    posts = Post.find(:all, :conditions => ["post_name=? and post_status='publish'", params[:permalink]])
+  else
+    posts = Post.find(:all, :conditions => ["post_name=? and DATE_FORMAT(post_date_gmt,'%Y.%m.%d')=? and post_status='publish'",
+                            params[:permalink],params[:date]])
+  end
+  halt 404 if posts.blank?
+
+  @post = posts.first
+end
+
