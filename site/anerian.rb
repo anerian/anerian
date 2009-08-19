@@ -24,9 +24,6 @@ get '/blog' do
   erb :blog, :layout => true
 end
 
-post '/interest' do
-end
-
 get '/feed' do
   @posts = Post.find(:all, :limit => 10, :conditions => {:post_type => 'post', :post_status => 'publish'},
                            :order => 'post_date DESC')
