@@ -56,7 +56,7 @@ end
 def find_view_from_path(params)
   @path = params[:permalink]
   path = "#{AppRoot}/views/#{@path}.erb"
-  return false if @path.match(/\.\./) or @path.match(/\//) or !File.exist?(path)
+  return false if @path.match(/\.\./) or @path.match(/\//) or @path.match(/^layout$/) or !File.exist?(path)
   @path.to_sym
 end
 
