@@ -50,7 +50,7 @@ get '/:permalink/:date' do
 end
 
 not_found do
-  'This is nowhere to be found'
+  erb :not_found_404
 end
 
 def find_view_from_path(params)
