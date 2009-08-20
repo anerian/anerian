@@ -159,7 +159,7 @@ body {
 }
 /* Footer chrome start */
 #footer {
-  background: #fa9e1e url(images/strip.png) repeat-y;
+  background: #fa9e1e url(/images/strip.png) repeat-y;
   height:29px;
   line-height:29px;
   color:#fff;

@@ -14,8 +14,8 @@
       <% if @path %><h2><a href="/">Anerian</a></h2><% else %><h1><a href="/">Anerian</a></h1><% end %>
       <h3 class="noline"><a <% if @path == 'blog' %>class="selected" <% end %>href="/blog">Insights</a></h3>
       <h3><a <% if @path == 'anerian-way' %>class="selected" <% end %>href="/anerian-way">Anerian Way</a></h3>
-      <h3><a <% if @path == 'strategy' %>class="selected" <% end %>href="/strategy">Strategy</a></h3>
       <h3><a <% if @path == 'consulting' %>class="selected" <% end %>href="/consulting">Consulting</a></h3>
+      <h3><a <% if @path == 'strategy' %>class="selected" <% end %>href="/strategy">Strategy</a></h3>
       <h3><a <% if @path == 'our-team' %>class="selected" <% end %>href="/our-team">Our Team</a></h3>
     </div>
   </div>
@@ -29,8 +29,7 @@
       1250 Connecticut Ave, NW Washington, DC, 20036 | e-mail: <a href="mailto:inquiries@anerian.com">inquiries@anerian.com</a> | T/888.945.8882 | F/866.467.0561
     </div>
   </div>
-  <!--[if lt IE 7.]></div><![endif]-->
-<!--[if IE]></div><![endif]-->
+<!--[if lt IE 7.]></div><![endif]--><!--[if IE]></div><![endif]-->
 <% yield_content :foot %>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
