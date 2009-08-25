@@ -1,5 +1,5 @@
 /* reset.css */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:top;}
 body {line-height:1.5;}
 table {border-collapse:separate;border-spacing:0;}
 caption, th, td {text-align:left;font-weight:normal;}
@@ -296,15 +296,27 @@ body {
   border:1px solid #ccc;
   border-top:none;
 }
+form.contact label {
+  font-weight:bold;
+}
 form.contact textarea {
-  width:480px;
-  height:300px;
   padding:4px;
+  width:250px;
+  height:100px;
+  font-size:16px;
 }
 form.contact input[type="text"] {
   border:1px solid #999;
-  width:480px;
   padding:4px;
+  width:200px;
+  font-size:16px;
+}
+form.contact {
+  width:400px;
+  margin:0 auto;
+}
+.contact h2 {
+  text-align:center;
 }
 .contact h2 cite {
   font-size:9px;
