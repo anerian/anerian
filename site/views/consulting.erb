@@ -67,7 +67,10 @@
       New opportunities in the market that require new thinking
       </p>
 
-      <form class="contact" action="http://leads.captico.com/leads/incoming" method="post">
+      <% if params[:signup] == '1' %>
+        <h2>Thank you!  We will be in contact soon</h2>
+      <% else %>
+      <form class="contact" action="http://leads.captico.com/leads/incoming" method="POST">
         <h2>Sign Up Today and get a Free list of effective innovation tips.</h2>
         <table cellpadding="10" cellspacing="10" style="width:350px;margin:0 auto">
           <tr>
@@ -107,10 +110,11 @@
           </tr>
         </table>
         <input type="hidden" name="lead[client_id]" value="1"/>
-        <input type="hidden" name="dest" value="http://anerian.com/consulting"/>
+        <input type="hidden" name="dest" value="http://anerian.com/consulting?signup=1"/>
       </form>
 
       <strong>Call today – 888-945-8882 or email us at <a href="mailto:innovation@anerian.com">innovation@anerian.com</a></strong>
+      <% end %>
     </div>
     <div class="clear"></div>
   </div>
