@@ -8,7 +8,7 @@ f <<  %(<?xml version="1.0" encoding="UTF-8"?>
 for page in pages do 
   f << %(
   <url>
-    <loc>#{page}</loc>
+    <loc>http://anerian.com#{page}</loc>
   </url>
 )
 end

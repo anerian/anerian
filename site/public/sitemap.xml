@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>/anerian-way</loc>
+    <loc>http://anerian.com/anerian-way</loc>
   </url>
 
   <url>
-    <loc>/blog</loc>
+    <loc>http://anerian.com/blog</loc>
   </url>
 
   <url>
-    <loc>/</loc>
+    <loc>http://anerian.com/</loc>
   </url>
 
   <url>
-    <loc>/our-team</loc>
+    <loc>http://anerian.com/our-team</loc>
   </url>
 
   <url>
-    <loc>/strategy</loc>
+    <loc>http://anerian.com/strategy</loc>
   </url>
 </urlset>
