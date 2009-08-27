@@ -71,4 +71,3 @@ def get_post(params)
 
   @post = posts.first
 end
-
