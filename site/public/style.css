@@ -104,12 +104,12 @@ body {
   float:right;
   margin:0px 0px 0px 10px;
   padding:0px 10px 0px 0px;
-  height:66px;
+  height:48px !important;
   font-size:18px;
   font-weight:normal;
   color:#fff;
   position:relative;
-  line-height:66px;
+  line-height:48px !important;
   z-index:50; /* for older ie */
   background:transparent url(/images/divider.png) no-repeat right center;
 }
@@ -122,7 +122,7 @@ body {
 #header h3 a {
   text-decoration:none;
   display:block;
-  height:66px;
+  height:48px !important;
   color:#fff;
 }
 #header h3 a.selected,
@@ -156,6 +156,7 @@ body {
 .ufocus {
   margin:0 auto;
   width:1020px;
+  position:relative;
 }
 /* Footer chrome start */
 #footer {
@@ -347,4 +348,26 @@ div.post h2 { margin-bottom:0px; margin-top:10px; }
   float:right;
   width:54px;
   height:80px;
+}
+.sub_menu {
+  position:absolute;
+  right:0px;
+  top:50px;
+}
+.sub_menu li {
+  float:left;
+  margin-right:20px;
+}
+.sub_menu li a {
+  color:#fff;
+  display:block;
+  height:25px;
+  text-decoration:none;
+}
+.sub_menu li a:hover {
+  text-shadow: 1px 1px 5px #fff;
+  cursor:pointer;
+}
+.sub_menu ul {
+  list-style:none;
 }
