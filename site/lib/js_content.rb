@@ -1,8 +1,7 @@
 module Sinatra
   module JSContent
     def js_content(&block)
-      #$packer ||= Rainpress::Packer.new
-      before_buf = @_out_buf # store the current buffer
+      before_buf = (@_out_buf || '').clone # store the current buffer
       @_out_buf = "" # reset the write buffer
       buf = block.call # capture the block content
       buf = JSMin.minify(buf)#$packer.compress(buf) # compress the block content

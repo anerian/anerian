@@ -5,9 +5,10 @@ $:.unshift 'lib'
 
 mime :ogv, 'video/ogg'
 
+set :lock, true
+
 configure do
   require 'env'
-  $packer = Rainpress::Packer.new
 end
 
 get '/' do
