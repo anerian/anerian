@@ -112,7 +112,6 @@ body {
 .ie6 #header h1,
 .ie6 #header h1 {
 	background:none !important;
-  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/logo.png',sizingMethod='crop');
   position:absolute;
   top:0px left:0px;
   display:block;
