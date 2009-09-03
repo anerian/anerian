@@ -1,6 +1,29 @@
+
+<%
+@dl = [{"title" => "Strategy Innovation", "p" => "effectively engage thousands in shaping and driving 
+the next Big Idea!", "img" => "/images/home/dl_strategy_innov.png"},
+      {"title" => "Talent Innovation", "p" => "our experts have guided culture and talent 
+			design innovation for many in the fortune 500", "img" => "/images/home/dl_talent_innov.png"},
+      {"title" => "Social Entrepreneurship", "p" => "learn from the top 10 leaders in matching growth 
+			with doing good.", "img" => "/images/home/dl_social_entrep.png"},
+      {"title" => "IT Innovation", "p" => "our experts help identify millions in new 
+			revenue and potential cost savings", "img" => "/images/home/dl_it_innov.png"},
+      {"title" => "Service Innovation", "p" => "engage in high impact ideation exercises to 
+			re-invent key touchpoints!", "img" => "/images/home/dl_service_innov.png"}]
+%>
+
 <% content_for :head do %>
 <style type="text/css">
 <% css_content do %>
+<% @dl.each_with_index do|window,i| %>
+#dl_window_frame_<%= i %> {
+  background:transparent url(<%= window["img"]%>) no-repeat
+}
+.ie6 #dl_window_frame_<%= i %> {
+  background:none;
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='<%= window["img"]%>',sizingMethod='crop');
+}
+<% end %>
 #strategy a.icon {
   background:transparent url(/images/home/thumbnail_sprite_strategy.png) 0px 0px no-repeat;
 }
@@ -31,15 +54,32 @@
 <% end %>
 </style>
 <% end %>
-<div id="stage">
-  <div id="pload">
-    <img id="plogo" width="476" height="124" src="/images/hlogo.png"/>
-    <video style="display:none" width="476" height="124" autobuffer>
-      <source src="/videos/home/logo.mov" type="video/mp4"/>
-      <source src="/videos/home/logo.ogv" type="video/ogg"/>
-    </video>
-  </div>
+<div id="slide-window">
+	<div id="slide-container">
+		<% @dl.each_with_index do |window,i| %>
+		<div class="window">
+			<div class="dl-left">
+				<div class="dl-text-top">
+					<h2><%= window["title"] %></h2>
+				</div>
+				<div class="dl-text-bottom">
+					<p><%= window["p"] %></p>
+				</div>
+			</div>
+			<div class="dl-right">
+				<div class="img" id="dl_window_frame_<%= i %>"></div>
+			</div>
+		</div>
+		<% end %>
+	</div>
 </div>
+<div id="slide-tabs">
+	<% @dl.length.times do |i| %>
+	<a <% if(i==0) %>class="selected" <% end %>href="<%= i %>"></a>
+	<% end %>
+</div>
+<div class="clear"></div>
+
 <div id="sections">
   <div id="strategy" class="section">
     <h2><a href="/strategy">Strategy</a></h2>
@@ -64,71 +104,7 @@
   <div class="clear"></div>
 </div>
 <% content_for :foot do %>
-<% if RACK_ENV=='production' %>
-  <script type="text/javascript" src="/scripts-min.js"></script>
-<% else %>
-  <script type="text/javascript" src="/scripts.js"></script>
-<% end %>
-  <script type="text/javascript">
-  <% js_content do %>
-    var HTML5Video = html5VideoCheck();
-    if( !HTML5Video ) {
-      document.write('<' + 'script type="text/javascript" src="/scripts/tools.flashembed-1.0.3.min.js"' + '></' + 'script>');
-    }
-    window.onload = function() {
-      var video = new AnVideo(ID('pload'), ID('plogo'));
-
-      video.observe("ended", function() {
-        video.hide();
-        ID("plogo").style.display = 'block';
-      });
-
-      video.play();
-    };
-
-    vidCB = function(){ };
-    function flashCB() {
-      vidCB();
-    }
-
-    function AnVideo(el,cover,options) { this.init(el,cover,options); }
-    AnVideo.prototype = {
-      init: function(el,cover,options) {
-        this.el = el;
-        this.cover = cover;
-        if( HTML5Video ) {
-          this.video = el.getElementsByTagName('video')[0];
-        }
-        else {
-          this.parentNode = el.parentNode;
-          this.originalHTML = el.parentNode.innerHTML;
-          this.video = flashembed(el,{src:'/flash/video-lite/anerian_video.swf',wmode:'transparent'}, {videoUrl:'/videos/home/logo.mov',funcString:'flashCB'});
-          vid = this.video;
-        }
-      },
-      play: function() {
-        this.cover.style.display = 'none';
-        if( HTML5Video ) {
-          this.video.style.display = 'block';
-          this.video.play();
-        }
-      },
-      observe: function(ev,cb) {
-        if( !HTML5Video ) {
-          vidCB = cb;
-        }
-        else {
-          this.video.addEventListener(ev, cb, true);
-        }
-      },
-      hide: function() {
-        if( HTML5Video ) {
-          this.video.style.display = 'none';
-        } else {
-          this.parentNode.innerHTML = this.originalHTML;
-        }
-      }
-    };
-    <% end %>
-  </script>
+	<script src="/scripts/jquery-1.3.2.min.js"></script>
+	<script src="/scripts/jquery.easing.1.3.js"></script>
+	<script src="/scripts/slideMenu.js"></script>
 <% end %>
