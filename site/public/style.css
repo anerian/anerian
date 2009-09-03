@@ -84,6 +84,9 @@ body {
   height:66px;
   padding:5px;
 }
+.ie #header {
+	background:#fa9f1e;
+}
 #header h2,
 #header h2 a,
 #header h1,
@@ -105,13 +108,12 @@ body {
 .ie6 #header h2 a,
 .ie6 #header h1,
 .ie6 #header h1 a {
-  background:none !important;
+   background:transparent url(/images/logo-fill.png) no-repeat;
 }
 .ie6 #header h2,
 .ie6 #header h2 ,
 .ie6 #header h1,
 .ie6 #header h1 {
-	background:none !important;
   position:absolute;
   top:0px left:0px;
   display:block;
@@ -121,9 +123,7 @@ body {
 }
 .ie6 #header h2 a:hover,
 .ie6 #header h1 a:hover {
-  background:none !important;
-  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/logog.png',sizingMethod='crop');
-cursor:pointer;
+	background:transparent url(/images/logog-fill.png) no-repeat;
 }
 
 #header h3 {
